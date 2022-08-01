@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/arian/Documents/GitHub/TCCandroid/DAPmotoristas/app/src/main/res/drawable-anydpi/ImgGallery.xml" value="0.2315" />
+        <entry key="..\:/Users/arian/Documents/GitHub/TCCandroid/DAPmotoristas/app/src/main/res/drawable-hdpi/edit_button.xml" value="0.2315" />
+        <entry key="..\:/Users/arian/Documents/GitHub/TCCandroid/DAPmotoristas/app/src/main/res/layout/activity_tela_cadastro.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/arian/Documents/GitHub/TCCandroid/DAPmotoristas/app/src/main/res/layout/activity_tela_login.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/arian/Documents/GitHub/TCCandroid/DAPmotoristas/app/src/main/res/layout/activity_tela_login_cadastro.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/arian/Documents/GitHub/TCCandroid/DAPmotoristas/app/src/main/res/layout/layout_acompanhartrajeto.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/arian/Documents/GitHub/TCCandroid/DAPmotoristas/app/src/main/res/layout/perfil.xml" value="0.22083333333333333" />
         <entry key="..\:/workspace/TCCandroid/DAPmotoristas/app/src/main/res/layout/layout_acompanhartrajeto.xml" value="0.16485507246376813" />
         <entry key="..\:/workspace/TCCandroid/DAPmotoristas/app/src/main/res/layout/layout_navegacao.xml" value="0.16485507246376813" />
         <entry key="..\:/workspace/TCCandroid/DAPmotoristas/app/src/main/res/layout/layout_telainicialaluno.xml" value="0.16485507246376813" />
@@ -11,7 +18,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
