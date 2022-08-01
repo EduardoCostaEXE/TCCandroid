@@ -3,9 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Eduardo/Desktop/TCCandroid/DAPmotoristas/app/src/main/res/layout/ListaDeClientes.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Eduardo/Desktop/TCCandroid/DAPmotoristas/app/src/main/res/layout/ListaDeClientes.xml" value="0.4742468415937804" />
         <entry key="..\:/Users/Eduardo/Desktop/TCCandroid/DAPmotoristas/app/src/main/res/layout/solicitacoes.xml" value="0.25271739130434784" />
-	      <entry key="..\:/workspace/TCCandroid/DAPmotoristas/app/src/main/res/layout/layout_acompanhartrajeto.xml" value="0.16485507246376813" />
+        <entry key="..\:/workspace/TCCandroid/DAPmotoristas/app/src/main/res/layout/layout_acompanhartrajeto.xml" value="0.16485507246376813" />
         <entry key="..\:/workspace/TCCandroid/DAPmotoristas/app/src/main/res/layout/layout_navegacao.xml" value="0.16485507246376813" />
         <entry key="..\:/workspace/TCCandroid/DAPmotoristas/app/src/main/res/layout/layout_telainicialaluno.xml" value="0.16485507246376813" />
         <entry key="..\:/workspace/TCCandroid/DAPmotoristas/app/src/main/res/layout/layout_telainicialmoto.xml" value="0.16485507246376813" />
@@ -13,7 +13,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
