@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">D.A.P. Motoristas</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="salvar">Salvar</string>
+    <string name="entrar">Entrar</string>
+    <string name="login">Login</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="Msg_Tela_Login">Gestão inteligente de transporte escolar</string>
 </resources>
