@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-61dp">
+
+
+    <ImageView
+        android:id="@+id/editarEndUniversidade3"
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/pencil"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="219dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <ImageView
+            android:id="@+id/editNomePassageiro"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/pencil"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="166dp" />
+
+        <ImageView
+            android:id="@+id/editEndUniversidade"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/pencil"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="209dp"
+            tools:layout_editor_absoluteY="317dp" />
+
+        <ImageView
+            android:id="@+id/imagChapeu"
+            android:layout_width="33dp"
+            android:layout_height="23dp"
+            app:srcCompat="@drawable/chapeu"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="219dp" />
+
+        <TextView
+            android:id="@+id/txtDefUniv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Definir Instituição de Ensino"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="87dp"
+            tools:layout_editor_absoluteY="218dp" />
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:src="@drawable/back_btn"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-1dp">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/avatar_pass"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="43dp"
+            tools:srcCompat="@drawable/avatar" />
+
+        <ImageView
+            android:id="@+id/editNome"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/pencil"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="98dp" />
+
+        <TextView
+            android:id="@+id/nomePass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fernando Souza"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="98dp" />
+
+        <TextView
+            android:id="@+id/local"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Locais"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="131dp" />
+
+        <ImageView
+            android:id="@+id/imagCasa"
+            android:layout_width="33dp"
+            android:layout_height="23dp"
+            app:srcCompat="@drawable/casa"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="166dp" />
+
+        <TextView
+            android:id="@+id/textHorario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horário de Aulas"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="281dp" />
+
+        <TextView
+            android:id="@+id/txtMotorista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Motorista"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="356dp" />
+
+        <TextView
+            android:id="@+id/txtNomeMotorista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver motoristas disponiveis"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="91dp"
+            tools:layout_editor_absoluteY="394dp" />
+
+        <TextView
+            android:id="@+id/textEncerrarSessao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Encerrar Sessão"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="679dp" />
+
+        <TextView
+            android:id="@+id/textDefinirCasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Definir Local"
+            tools:layout_editor_absoluteX="87dp"
+            tools:layout_editor_absoluteY="168dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Definir grade de horários"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="317dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="34dp"
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/moto"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="387dp"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/editarNome2"
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/pencil"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="166dp" />
+
+    <ImageView
+        android:id="@+id/editarEndUniversidade2"
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/pencil"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="219dp" />
+
+    <ImageView
+        android:id="@+id/imgChapeu"
+        android:layout_width="33dp"
+        android:layout_height="23dp"
+        app:srcCompat="@drawable/chapeu"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="219dp" />
+
+    <TextView
+        android:id="@+id/txtDefinirUniversidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Definir Instituição de Ensino"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:src="@drawable/back_btn"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/avatar_passageiro"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="43dp"
+        tools:srcCompat="@drawable/avatar" />
+
+    <ImageView
+        android:id="@+id/editarNome"
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/pencil"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="98dp" />
+
+    <TextView
+        android:id="@+id/nomePassageiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fernando Souza"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="98dp" />
+
+    <TextView
+        android:id="@+id/locais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Locais"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="131dp" />
+
+    <ImageView
+        android:id="@+id/imgCasa"
+        android:layout_width="33dp"
+        android:layout_height="23dp"
+        app:srcCompat="@drawable/casa"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="166dp" />
+
+    <TextView
+        android:id="@+id/txtHorario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horário de Aulas"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="281dp" />
+
+    <TextView
+        android:id="@+id/txtEncerrarSessao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Encerrar Sessão"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="679dp" />
+
+    <TextView
+        android:id="@+id/txtDefinirCasa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Definir Local"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="168dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Definir grade de horários"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="317dp"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
