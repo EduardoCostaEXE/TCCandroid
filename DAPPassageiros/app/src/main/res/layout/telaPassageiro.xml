@@ -11,60 +11,27 @@
     tools:layout_editor_absoluteY="-61dp">
 
 
-    <ImageView
-        android:id="@+id/editarEndUniversidade"
-        android:layout_width="35dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/pencil"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="219dp" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical"
-        tools:context=".MainActivity"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-
-        <ImageView
-            android:id="@+id/editNomePassageiro"
-            android:layout_width="35dp"
-            android:layout_height="20dp"
-            app:srcCompat="@drawable/pencil"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="165dp"
-            tools:layout_editor_absoluteY="166dp" />
-
         <ImageView
             android:id="@+id/editEndUniversidade"
             android:layout_width="35dp"
             android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textGrade"
+            app:layout_constraintStart_toEndOf="@+id/textGrade"
+            app:layout_constraintTop_toTopOf="@+id/textGrade"
             app:srcCompat="@drawable/pencil"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="209dp"
-            tools:layout_editor_absoluteY="317dp" />
-
-        <ImageView
-            android:id="@+id/imagChapeu"
-            android:layout_width="33dp"
-            android:layout_height="23dp"
-            app:srcCompat="@drawable/chapeu"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="219dp" />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/txtDefUniv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:text="Definir Instituição de Ensino"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="87dp"
-            tools:layout_editor_absoluteY="218dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/imgChapeu"
+            app:layout_constraintStart_toEndOf="@+id/imgChapeu"
+            app:layout_constraintTop_toTopOf="@+id/imgChapeu"
+            tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/back_button"
@@ -72,251 +39,166 @@
             android:layout_height="wrap_content"
             android:padding="14dp"
             android:src="@drawable/back_btn"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="-1dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
 
         </ImageView>
+
+        <ImageView
+            android:id="@+id/editarEndUniversidade"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDefUniv"
+            app:layout_constraintStart_toEndOf="@+id/txtDefUniv"
+            app:layout_constraintTop_toTopOf="@+id/txtDefUniv"
+            app:srcCompat="@drawable/pencil"
+            tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/avatar_pass"
             android:layout_width="65dp"
             android:layout_height="55dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_button"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="43dp"
             tools:srcCompat="@drawable/avatar" />
 
         <ImageView
             android:id="@+id/editNome"
             android:layout_width="35dp"
             android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nomePass"
+            app:layout_constraintStart_toEndOf="@+id/nomePass"
+            app:layout_constraintTop_toTopOf="@+id/nomePass"
             app:srcCompat="@drawable/pencil"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="153dp"
-            tools:layout_editor_absoluteY="98dp" />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/nomePass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="Fernando Souza"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="98dp" />
+            app:layout_constraintStart_toStartOf="@+id/avatar_pass"
+            app:layout_constraintTop_toBottomOf="@+id/avatar_pass"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/local"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="Locais"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="131dp" />
-
-        <ImageView
-            android:id="@+id/imagCasa"
-            android:layout_width="33dp"
-            android:layout_height="23dp"
-            app:srcCompat="@drawable/casa"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="166dp" />
+            app:layout_constraintStart_toStartOf="@+id/nomePass"
+            app:layout_constraintTop_toBottomOf="@+id/nomePass"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textHorario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="Horário de Aulas"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="281dp" />
+            app:layout_constraintStart_toStartOf="@+id/imgChapeu"
+            app:layout_constraintTop_toBottomOf="@+id/imgChapeu"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/txtMotorista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="Motorista"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="356dp" />
+            app:layout_constraintStart_toStartOf="@+id/textGrade"
+            app:layout_constraintTop_toBottomOf="@+id/textGrade"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/txtNomeMotorista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:text="Ver motoristas disponiveis"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="91dp"
-            tools:layout_editor_absoluteY="394dp" />
-
-        <TextView
-            android:id="@+id/textEncerrarSessao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Encerrar Sessão"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="679dp" />
-
-        <TextView
-            android:id="@+id/textDefinirCasa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Definir Local"
-            tools:layout_editor_absoluteX="87dp"
-            tools:layout_editor_absoluteY="168dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textGrade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="Definir grade de horários"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="317dp"
+            app:layout_constraintStart_toStartOf="@+id/textHorario"
+            app:layout_constraintTop_toBottomOf="@+id/textHorario"
             tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="34dp"
             android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="@+id/txtMotorista"
+            app:layout_constraintTop_toBottomOf="@+id/txtMotorista"
             app:srcCompat="@drawable/moto"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="387dp"
             tools:ignore="MissingConstraints" />
 
+        <ImageView
+            android:id="@+id/editarNome2"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDefinirCasa"
+            app:layout_constraintStart_toEndOf="@+id/txtDefinirCasa"
+            app:layout_constraintTop_toTopOf="@+id/txtDefinirCasa"
+            app:srcCompat="@drawable/pencil"
+            tools:ignore="MissingConstraints" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txtEncerrarSessao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="156dp"
+            android:text="Encerrar Sessão"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/avatar_pass"
+            tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/editarNome2"
-        android:layout_width="35dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/pencil"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="166dp" />
+        <TextView
+            android:id="@+id/txtDefinirCasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Definir Local"
+            app:layout_constraintBottom_toBottomOf="@+id/imgCasa"
+            app:layout_constraintStart_toEndOf="@+id/imgCasa"
+            app:layout_constraintTop_toTopOf="@+id/imgCasa"
+            tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/editarEndUniversidade2"
-        android:layout_width="35dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/pencil"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="219dp" />
+        <ImageView
+            android:id="@+id/imgCasa"
+            android:layout_width="33dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="@+id/local"
+            app:layout_constraintTop_toBottomOf="@+id/local"
+            app:srcCompat="@drawable/casa"
+            tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imgChapeu"
-        android:layout_width="33dp"
-        android:layout_height="23dp"
-        app:srcCompat="@drawable/chapeu"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="219dp" />
-
-    <TextView
-        android:id="@+id/txtDefinirUniversidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Definir Instituição de Ensino"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="218dp" />
-
-    <ImageView
-        android:id="@+id/back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="14dp"
-        android:src="@drawable/back_btn"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-1dp">
-
-    </ImageView>
-
-    <ImageView
-        android:id="@+id/avatar_passageiro"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="43dp"
-        tools:srcCompat="@drawable/avatar" />
-
-    <ImageView
-        android:id="@+id/editarNome"
-        android:layout_width="35dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/pencil"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="98dp" />
-
-    <TextView
-        android:id="@+id/nomePassageiro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fernando Souza"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="98dp" />
-
-    <TextView
-        android:id="@+id/locais"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Locais"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="131dp" />
-
-    <ImageView
-        android:id="@+id/imgCasa"
-        android:layout_width="33dp"
-        android:layout_height="23dp"
-        app:srcCompat="@drawable/casa"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="166dp" />
-
-    <TextView
-        android:id="@+id/txtHorario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Horário de Aulas"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="281dp" />
-
-    <TextView
-        android:id="@+id/txtEncerrarSessao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Encerrar Sessão"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="679dp" />
-
-    <TextView
-        android:id="@+id/txtDefinirCasa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Definir Local"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="168dp"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/txtGrade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Definir grade de horários"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="317dp"
-        tools:ignore="MissingConstraints" />
-
+        <ImageView
+            android:id="@+id/imgChapeu"
+            android:layout_width="33dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="@+id/imgCasa"
+            app:layout_constraintTop_toBottomOf="@+id/imgCasa"
+            app:srcCompat="@drawable/chapeu"
+            tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
