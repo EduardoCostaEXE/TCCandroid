@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6061ed5b-1c4d-4eb6-8019-5e28fa269809" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/TCCandroid.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/java/com/example/dapmotoristas/TelaCadastro.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/java/com/example/dapmotoristas/TelaLogin.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/java/com/example/dapmotoristas/TelaLoginCadastro.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-hdpi/edit_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/layout/activity_tela_cadastro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/layout/activity_tela_login.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/layout/activity_tela_login_cadastro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPPassageiros/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPPassageiros/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPmotoristas/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPmotoristas/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-anydpi/ImgGallery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-anydpi/ImgGallery.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-hdpi/ImgEducationIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-hdpi/ImgEducationIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-hdpi/ImgGallery.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-hdpi/ImgGallery.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-hdpi/ImgUserDefaultImg.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-hdpi/ImgUserDefaultImg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-mdpi/ImgArrowBack.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-mdpi/ImgArrowBack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-mdpi/ImgEducationIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-mdpi/ImgEducationIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-mdpi/ImgGallery.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-mdpi/ImgGallery.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-xhdpi/ImgArrowBack.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-xhdpi/ImgArrowBack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-xhdpi/ImgEducationIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-xhdpi/ImgEducationIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-xhdpi/ImgGallery.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-xhdpi/ImgGallery.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-xxhdpi/ImgArrowBack.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-xxhdpi/ImgArrowBack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-xxhdpi/ImgEducationIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-xxhdpi/ImgEducationIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-xxhdpi/ImgGallery.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-xxhdpi/ImgGallery.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-xxxhdpi/ImgArrowBack.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-xxxhdpi/ImgArrowBack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable-xxxhdpi/ImgEducationIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable-xxxhdpi/ImgEducationIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/drawable/captura_de_tela_2022_07_29_070043.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/drawable/captura_de_tela_2022_07_29_070043.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/layout/ListaDeClientes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/layout/ListaDeClientes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/layout/solicitacoes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPPassageiros/app/src/main/res/layout/solicitacoes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAPmotoristas/app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2CrXnLj3odDCpBpNYR4hzivsLGi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="cidr.known.project.marker" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6061ed5b-1c4d-4eb6-8019-5e28fa269809" name="Changes" comment="" />
+      <created>1659561846746</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659561846746</updated>
+    </task>
+    <servers />
   </component>
 </project>

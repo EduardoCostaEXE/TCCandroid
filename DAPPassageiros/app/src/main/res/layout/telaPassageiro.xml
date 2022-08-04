@@ -12,7 +12,7 @@
 
 
     <ImageView
-        android:id="@+id/editarEndUniversidade3"
+        android:id="@+id/editarEndUniversidade"
         android:layout_width="35dp"
         android:layout_height="20dp"
         app:srcCompat="@drawable/pencil"
@@ -174,7 +174,8 @@
             android:layout_height="wrap_content"
             android:text="Definir grade de horários"
             tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="317dp" />
+            tools:layout_editor_absoluteY="317dp"
+            tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/imageView2"
