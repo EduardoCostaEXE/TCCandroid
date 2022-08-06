@@ -91,7 +91,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="4dp"
         app:layout_constraintStart_toEndOf="@+id/endUniversidade"
-        app:srcCompat="@drawable/pencil"
+        app:srcCompat="@drawable/img_lapis"
         tools:layout_editor_absoluteY="242dp"
         tools:ignore="MissingConstraints" />
 
@@ -99,10 +99,10 @@
         android:id="@+id/imgChapeu"
         android:layout_width="33dp"
         android:layout_height="23dp"
-        app:srcCompat="@drawable/chapeu"
+        app:srcCompat="@drawable/img_escolaridade"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="219dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="219dp" />
 
     <TextView
         android:id="@+id/endUniversidade"
@@ -128,7 +128,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/endCasa"
-        app:srcCompat="@drawable/pencil"
+        app:srcCompat="@drawable/img_lapis"
         tools:layout_editor_absoluteY="189dp"
         tools:ignore="MissingConstraints" />
 
@@ -137,10 +137,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="14dp"
-        android:src="@drawable/back_btn"
+        android:src="@drawable/img_seta_voltar"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-1dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteY="0dp">
 
     </ImageView>
 
@@ -151,7 +151,7 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="53dp"
         tools:layout_editor_absoluteY="43dp"
-        tools:srcCompat="@drawable/avatar" />
+        tools:srcCompat="@drawable/img_foto_perfil" />
 
     <ImageView
         android:id="@+id/avatarMotorista"
@@ -160,16 +160,16 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="536dp"
-        tools:srcCompat="@drawable/avatar" />
+        tools:srcCompat="@drawable/img_foto_perfil" />
 
     <ImageView
         android:id="@+id/editarNome"
         android:layout_width="35dp"
         android:layout_height="20dp"
-        app:srcCompat="@drawable/pencil"
+        app:srcCompat="@drawable/img_lapis"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="98dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="97dp" />
 
     <TextView
         android:id="@+id/nomePassageiro"
@@ -193,7 +193,7 @@
         android:id="@+id/imgCasa"
         android:layout_width="33dp"
         android:layout_height="23dp"
-        app:srcCompat="@drawable/casa"
+        app:srcCompat="@drawable/img_casa"
         tools:layout_editor_absoluteX="52dp"
         tools:layout_editor_absoluteY="166dp"
         tools:ignore="MissingConstraints" />
