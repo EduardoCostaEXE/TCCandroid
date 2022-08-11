@@ -14,6 +14,15 @@
         android:theme="@style/Theme.DAPMotoristas"
         tools:targetApi="31">
         <activity
+            android:name=".CardLista"
+            android:exported="false" />
+        <activity
+            android:name=".ListaDeAlunos"
+            android:exported="false" />
+        <activity
+            android:name=".Perfil"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

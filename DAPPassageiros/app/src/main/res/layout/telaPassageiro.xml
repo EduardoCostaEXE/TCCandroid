@@ -19,7 +19,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/textGrade"
             app:layout_constraintStart_toEndOf="@+id/textGrade"
             app:layout_constraintTop_toTopOf="@+id/textGrade"
-            app:srcCompat="@drawable/pencil"
+            app:srcCompat="@drawable/img_lapis"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="14dp"
-            android:src="@drawable/back_btn"
+            android:src="@drawable/img_seta_voltar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
@@ -53,7 +53,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/txtDefUniv"
             app:layout_constraintStart_toEndOf="@+id/txtDefUniv"
             app:layout_constraintTop_toTopOf="@+id/txtDefUniv"
-            app:srcCompat="@drawable/pencil"
+            app:srcCompat="@drawable/img_lapis"
             tools:ignore="MissingConstraints" />
 
         <ImageView
@@ -65,7 +65,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/back_button"
             tools:ignore="MissingConstraints"
-            tools:srcCompat="@drawable/avatar" />
+            tools:srcCompat="@drawable/img_foto_perfil" />
 
         <ImageView
             android:id="@+id/editNome"
@@ -75,7 +75,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/nomePass"
             app:layout_constraintStart_toEndOf="@+id/nomePass"
             app:layout_constraintTop_toTopOf="@+id/nomePass"
-            app:srcCompat="@drawable/pencil"
+            app:srcCompat="@drawable/img_lapis"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -146,7 +146,7 @@
             android:layout_marginTop="5dp"
             app:layout_constraintStart_toStartOf="@+id/txtMotorista"
             app:layout_constraintTop_toBottomOf="@+id/txtMotorista"
-            app:srcCompat="@drawable/moto"
+            app:srcCompat="@drawable/img_motorista"
             tools:ignore="MissingConstraints" />
 
         <ImageView
@@ -157,7 +157,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/txtDefinirCasa"
             app:layout_constraintStart_toEndOf="@+id/txtDefinirCasa"
             app:layout_constraintTop_toTopOf="@+id/txtDefinirCasa"
-            app:srcCompat="@drawable/pencil"
+            app:srcCompat="@drawable/img_lapis"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -188,7 +188,7 @@
             android:layout_marginTop="5dp"
             app:layout_constraintStart_toStartOf="@+id/local"
             app:layout_constraintTop_toBottomOf="@+id/local"
-            app:srcCompat="@drawable/casa"
+            app:srcCompat="@drawable/img_casa"
             tools:ignore="MissingConstraints" />
 
         <ImageView
@@ -198,7 +198,7 @@
             android:layout_marginTop="5dp"
             app:layout_constraintStart_toStartOf="@+id/imgCasa"
             app:layout_constraintTop_toBottomOf="@+id/imgCasa"
-            app:srcCompat="@drawable/chapeu"
+            app:srcCompat="@drawable/img_escolaridade"
             tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
