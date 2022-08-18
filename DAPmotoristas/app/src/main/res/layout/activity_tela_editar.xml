@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,7 +11,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
         android:background="@color/white"
-        tools:context=".Perfil">
+        tools:context=".TelaEditar">
 
         <ImageButton
             android:id="@+id/btn_voltar"
@@ -34,49 +33,22 @@
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_voltar"
-            android:background="@drawable/img_foto_perfil" />
+            tools:srcCompat="@drawable/img_foto_perfil" />
 
-        <Button
-            android:id="@+id/btn_notificacoes"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:backgroundTint="#FFFFFF"
-            android:text="Notificações"
-            android:textColor="#000000"
-            android:drawableLeft="@drawable/img_sino"
-            app:iconTint="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_voltar" />
-
-        <TextView
-            android:id="@+id/lbl_nomeUsuario"
+        <EditText
+            android:id="@+id/edit_text_nomeUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="@string/nomeUsuario"
+            android:hint="@string/nomeUsuario"
             android:textColor="#000000"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_fotoUsuario" />
 
-        <ImageButton
-            android:id="@+id/btn_editar"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/img_lapis"
-            app:iconPadding="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/label_localAbrangencia"
-            app:layout_constraintStart_toEndOf="@+id/lbl_nomeUsuario" />
-
         <TextView
-            android:id="@+id/text_abrangencia"
+            android:id="@+id/label_localAbrangencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -84,110 +56,117 @@
             android:textColor="#000000"
             android:textSize="15.3sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lbl_nomeUsuario" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_nomeUsuario" />
 
-        <TextView
-            android:id="@+id/label_localAbrangencia"
+        <EditText
+            android:id="@+id/edit_text_localAbrangencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Defina o local"
+            android:hint="@string/defina_o_local"
+            android:paddingTop="0dp"
+            android:layout_marginStart="5dp"
             android:textColor="#000000"
             android:textSize="15.3sp"
-            app:layout_constraintStart_toEndOf="@+id/text_abrangencia"
-            app:layout_constraintTop_toBottomOf="@+id/lbl_nomeUsuario" />
+            app:layout_constraintStart_toEndOf="@id/label_localAbrangencia"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_nomeUsuario" />
 
         <ImageView
-            android:id="@+id/img_escolaridade"
+            android:id="@+id/img_chapeu"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_abrangencia"
-            android:background="@drawable/img_escolaridade" />
+            app:layout_constraintTop_toBottomOf="@id/label_localAbrangencia"
+            tools:srcCompat="@drawable/img_escolaridade" />
 
         <TextView
-            android:id="@+id/text_instituicoes"
+            android:id="@+id/label_titulo_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="@string/instituicoes_de_ensino_atendidas"
             android:textColor="#000000"
             android:textSize="15sp"
-            app:layout_constraintStart_toEndOf="@+id/img_escolaridade"
-            app:layout_constraintTop_toBottomOf="@+id/label_localAbrangencia" />
+            app:layout_constraintStart_toEndOf="@id/img_chapeu"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_localAbrangencia" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintUniversidade"
             android:layout_width="359dp"
-            android:layout_height="199dp"
+            android:layout_height="235dp"
             android:layout_marginTop="8dp"
             android:background="#E5E5E5"
             android:backgroundTint="#E5E5E5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_escolaridade">
+            app:layout_constraintTop_toBottomOf="@id/img_chapeu">
 
-            <TextView
-                android:id="@+id/lbl_universidade"
+            <EditText
+                android:id="@+id/edit_text_nomeUniversidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="Universidade indefinida:"
+                android:paddingTop="0dp"
+                android:hint="@string/nome_da_universidade"
                 android:textColor="#000000"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text_endereco"
+                android:id="@+id/label_endereco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Endereço: "
+                android:text="@string/endereco_perfil"
                 android:textColor="#000000"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_universidade"/>
+                app:layout_constraintTop_toBottomOf="@id/edit_text_nomeUniversidade" />
 
             <TextView
-                android:id="@+id/lbl_enderecoFaculdade"
+                android:id="@+id/label_mensalidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Defina o endereço"
-                android:textColor="#000000"
-                android:textSize="13sp"
-                app:layout_constraintStart_toEndOf="@+id/text_endereco"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_universidade" />
-
-            <TextView
-                android:id="@+id/text_mensalidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="25dp"
                 android:text="@string/mensalidade_rs"
                 android:textColor="#000000"
                 android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_endereco" />
+                app:layout_constraintStart_toStartOf="@id/label_endereco"
+                app:layout_constraintTop_toBottomOf="@id/label_endereco" />
 
-            <TextView
-                android:id="@+id/lbl_mensalidade"
+            <EditText
+                android:id="@+id/edit_text_endereco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="00,00"
+                android:hint="@string/defina_o_endereco"
+                android:paddingTop="0dp"
+                android:layout_marginStart="5dp"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@id/label_endereco"
+                app:layout_constraintTop_toBottomOf="@id/edit_text_nomeUniversidade" />
+
+            <EditText
+                android:id="@+id/edit_text_mensalidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/valor_mensalidade"
+                android:inputType="number"
+                android:paddingTop="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="5dp"
                 android:textAlignment="gravity"
                 android:textColor="#000000"
                 android:textSize="13sp"
-                app:layout_constraintBottom_toBottomOf="@+id/text_mensalidade"
-                app:layout_constraintStart_toEndOf="@+id/text_mensalidade"
-                app:layout_constraintTop_toTopOf="@+id/text_mensalidade" />
+                app:layout_constraintStart_toEndOf="@id/label_mensalidade"
+                app:layout_constraintTop_toBottomOf="@id/edit_text_endereco" />
 
             <TextView
-                android:id="@+id/text_itinerario"
+                android:id="@+id/label_itinerario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -196,98 +175,89 @@
                 android:textColor="#000000"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_mensalidade" />
+                app:layout_constraintTop_toBottomOf="@id/label_mensalidade" />
 
-            <TextView
-                android:id="@+id/text_manha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <CheckBox
+                android:id="@+id/checkBox_manha"
+                android:layout_width="214dp"
+                android:layout_height="19dp"
                 android:layout_marginStart="16dp"
-                android:text="Manhã: "
+                android:layout_marginTop="5dp"
+                android:padding="0dp"
+                android:text="@string/atende_no_periodo_da_manha"
                 android:textColor="#000000"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_itinerario" />
+                app:layout_constraintTop_toBottomOf="@id/label_itinerario" />
 
-            <TextView
-                android:id="@+id/lbl_itinerarioManha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não atende"
-                android:textColor="#000000"
-                android:textSize="13sp"
-                app:layout_constraintStart_toEndOf="@+id/text_manha"
-                app:layout_constraintTop_toBottomOf="@+id/text_itinerario" />
-
-            <TextView
-                android:id="@+id/text_noite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <CheckBox
+                android:id="@+id/checkBox_noite"
+                android:layout_width="214dp"
+                android:layout_height="19dp"
                 android:layout_marginStart="16dp"
-                android:text="Noite: "
+                android:layout_marginTop="5dp"
+                android:padding="0dp"
+                android:text="@string/atende_no_periodo_da_noite"
                 android:textColor="#000000"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_manha" />
+                app:layout_constraintTop_toBottomOf="@id/checkBox_manha" />
 
             <TextView
-                android:id="@+id/lbl_itinerarioNoite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não atende"
-                android:textColor="#000000"
-                android:textSize="13sp"
-                app:layout_constraintStart_toEndOf="@+id/text_noite"
-                app:layout_constraintTop_toBottomOf="@+id/text_manha" />
-
-            <TextView
-                android:id="@+id/text_saida"
+                android:id="@+id/label_horario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/horario_saida"
                 android:textColor="#000000"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_noite" />
+                app:layout_constraintTop_toBottomOf="@id/checkBox_noite" />
 
-            <TextView
-                android:id="@+id/lbl_horarioSaida"
+            <EditText
+                android:id="@+id/edit_text_horarioSaida"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="00:00"
+                android:hint="@string/horario_entrada_saida"
+                android:inputType="time"
+                android:paddingTop="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
                 android:textColor="#000000"
                 android:textSize="13sp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintStart_toEndOf="@+id/text_saida"
-                app:layout_constraintTop_toTopOf="@+id/text_saida" />
+                app:layout_constraintStart_toEndOf="@id/label_horario"
+                app:layout_constraintTop_toBottomOf="@id/checkBox_noite" />
 
             <TextView
-                android:id="@+id/text_retorno"
+                android:id="@+id/label_retorno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="@string/retorno"
                 android:textColor="#000000"
                 android:textSize="13sp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintStart_toEndOf="@+id/lbl_horarioSaida"
-                app:layout_constraintTop_toTopOf="@+id/lbl_horarioSaida" />
+                app:layout_constraintStart_toEndOf="@id/edit_text_horarioSaida"
+                app:layout_constraintTop_toBottomOf="@id/checkBox_noite" />
 
-            <TextView
-                android:id="@+id/lbl_horarioRetorno"
+            <EditText
+                android:id="@+id/edit_horarioRetorno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="00:00"
+                android:hint="@string/horario_entrada_saida"
+                android:inputType="time"
+                android:paddingTop="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:textColor="#000000"
                 android:textSize="13sp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintStart_toEndOf="@+id/text_retorno"
-                app:layout_constraintTop_toTopOf="@+id/text_retorno" />
+                app:layout_constraintStart_toEndOf="@+id/label_retorno"
+                app:layout_constraintTop_toBottomOf="@id/checkBox_noite" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/text_informacoesVeiculo"
+            android:id="@+id/label_informacoesVeiculo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -299,54 +269,56 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintUniversidade" />
 
         <TextView
-            android:id="@+id/text_placa"
+            android:id="@+id/label_placaVeiculo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:text="@string/placa"
             android:textColor="#000000"
             android:textSize="13sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_informacoesVeiculo" />
+            app:layout_constraintTop_toBottomOf="@id/label_informacoesVeiculo" />
 
-        <TextView
-            android:id="@+id/label_placaVeiculo"
+        <EditText
+            android:id="@+id/edit_text_placaVeiculo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AAA0000"
+            android:layout_marginTop="9dp"
+            android:hint="@string/placa_exemplo"
+            android:paddingTop="0dp"
+            android:layout_marginStart="5dp"
             android:textColor="#000000"
             android:textSize="13sp"
-            android:layout_marginStart="5dp"
-            app:layout_constraintStart_toEndOf="@+id/text_placa"
-            app:layout_constraintTop_toTopOf="@+id/text_placa" />
+            app:layout_constraintStart_toEndOf="@id/label_placaVeiculo"
+            app:layout_constraintTop_toBottomOf="@id/label_informacoesVeiculo" />
 
         <TextView
-            android:id="@+id/text_fotoVeiculo"
+            android:id="@+id/label_fotoVeiculo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:text="@string/foto_do_veiculo"
             android:textColor="#000000"
             android:textSize="13sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_placa" />
+            app:layout_constraintTop_toBottomOf="@id/label_placaVeiculo" />
 
         <ImageView
-            android:id="@+id/img_fotoVeiculo"
+            android:id="@+id/img_veiculo"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/img_sem_imagem"
+            android:background="#C4C4C4"
             android:backgroundTint="#C4C4C4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_fotoVeiculo" />
-
+            app:layout_constraintTop_toBottomOf="@id/label_fotoVeiculo"
+            tools:srcCompat="@drawable/img_sem_imagem" />
 
         <TextView
-            android:id="@+id/text_vagas"
+            android:id="@+id/label_vagasDisponiveis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -355,22 +327,25 @@
             android:textColor="#000000"
             android:textSize="13sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_fotoVeiculo" />
+            app:layout_constraintTop_toBottomOf="@+id/img_veiculo" />
 
-        <TextView
-            android:id="@+id/lbl_vagas"
+        <EditText
+            android:id="@+id/edit_text_vagas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="0"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:paddingTop="0dp"
+            android:gravity="center"
+            android:layout_marginStart="5dp"
             android:textColor="#000000"
             android:textSize="13sp"
-            android:layout_marginStart="5dp"
-            app:layout_constraintStart_toEndOf="@+id/text_vagas"
-            app:layout_constraintTop_toBottomOf="@+id/img_fotoVeiculo" />
+            app:layout_constraintStart_toEndOf="@id/label_vagasDisponiveis"
+            app:layout_constraintTop_toBottomOf="@id/img_veiculo" />
 
         <TextView
-            android:id="@+id/text_observacao"
+            android:id="@+id/label_observacoes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -379,18 +354,30 @@
             android:textColor="#000000"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_vagas" />
+            app:layout_constraintTop_toBottomOf="@id/label_vagasDisponiveis" />
 
-        <TextView
-            android:id="@+id/lbl_observacao"
+        <EditText
+            android:id="@+id/edit_text_observacao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:text="Insira aqui alguma informação adicional se achar necessário"
+            android:hint="@string/insira_aqui_alguma_informacao_adicional_se_achar_necessario"
+            android:paddingTop="0dp"
+            android:inputType="textMultiLine"
             android:textColor="#000000"
             android:textSize="13sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_observacao" />
+            app:layout_constraintTop_toBottomOf="@id/label_observacoes" />
+
+
+        <Button
+            android:id="@+id/btn_salvar"
+            style="@style/Edit_Button"
+            android:backgroundTint="@color/LightGray"
+            android:text="@string/salvar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_observacao" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
