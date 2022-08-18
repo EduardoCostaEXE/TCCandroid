@@ -11,8 +11,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DAPMotoristas"
+        android:theme="@style/Theme.SpashScreen"
         tools:targetApi="31">
+        <activity
+            android:name=".TelaEditar"
+            android:exported="false" />
+        <activity
+            android:name=".Navegacao"
+            android:exported="false" />
         <activity
             android:name=".CardLista"
             android:exported="false" />
@@ -23,7 +29,16 @@
             android:name=".Perfil"
             android:exported="false" />
         <activity
+            android:name=".TelaCadastro"
+            android:exported="false" />
+        <activity
+            android:name=".TelaInicialMoto"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

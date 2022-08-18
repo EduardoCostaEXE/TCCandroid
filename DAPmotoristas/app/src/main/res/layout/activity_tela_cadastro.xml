@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".TelaCadastro">
 
     <ImageView
@@ -46,7 +48,7 @@
         android:hint="@string/nome"
         android:layout_marginTop="110dp"
         android:ems="10"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_mensagem"
@@ -74,20 +76,6 @@
         app:layout_constraintTop_toBottomOf="@id/edit_email"
         />
 
-
-    <TextView
-        android:id="@+id/text_mensagem_click"
-        style="@style/Edit_Mensagem_Click"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:text="Você já tem uma conta?"
-        android:textColor="@color/LightGray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button"
-        />
-
     <Button
         android:id="@+id/button"
         style="@style/Edit_Button"
@@ -95,19 +83,29 @@
         android:backgroundTint="@color/LightGray"
         android:text="@string/salvar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/button"
         app:layout_constraintTop_toBottomOf="@id/edit_senha" />
 
     <TextView
-        android:id="@+id/text_mensagem_click1"
+        android:id="@+id/label_mensagem_2"
         style="@style/Edit_Mensagem_Click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
-        android:text="Entre."
+        android:text="@string/voce_ja_tem_uma_conta"
+        android:textColor="@color/LightGray"
+        app:layout_constraintStart_toStartOf="@id/button"
+        app:layout_constraintEnd_toStartOf="@id/text_mensagem_click"
+        app:layout_constraintTop_toBottomOf="@id/button" />
+
+    <TextView
+        android:id="@+id/text_mensagem_click"
+        style="@style/Edit_Mensagem_Click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/entre"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_mensagem_2"
+        app:layout_constraintEnd_toEndOf="@id/button"
         app:layout_constraintTop_toBottomOf="@id/button"
         />
 

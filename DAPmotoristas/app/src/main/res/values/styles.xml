@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--Estilos da tela Login-->
     <style name="Edit_Mensagem">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -38,10 +39,8 @@
     <style name="Edit_Mensagem_Click">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">5dp</item>
-        <item name="android:layout_marginLeft">40dp</item>
-        <item name="android:layout_marginRight">40dp</item>
-        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -60,4 +59,23 @@
         <item name="android:layout_marginRight">50dp</item>
     </style>
 
-</resources>
+    <!--Estilos da tela de Navegação-->
+    <style name="label">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+    <!--Estilos da tela de Menu-->
+    <style name="edit_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:backgroundTint">@color/LightGray</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">10dp</item>
+
+     </style>
+ </resources>
