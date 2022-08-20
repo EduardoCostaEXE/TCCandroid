@@ -1,26 +1,41 @@
 package com.example.dapmotoristas
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.dapmotoristas.databinding.ActivityNavegacaoBinding
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
-class Navegacao : AppCompatActivity() {
-    private lateinit var binding: ActivityNavegacaoBinding
+class Navegacao : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityNavegacaoBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_navegacao)
 
-        supportActionBar?.hide()
-
-        binding.btnVoltar.setOnClickListener {
-            irParaTelaMenu()
-        }
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapa) as? SupportMapFragment
+        mapFragment?.getMapAsync(this)
     }
-    private fun irParaTelaMenu(){
-        val telaCadastro = Intent(this, TelaInicialMoto::class.java)
-        startActivity(telaCadastro)
+
+
+    //COLOQUEM AS LOCALIZAÇÕES AQUI
+        //1 - CRIEM A VARIÁVEL COM A LATITUDE E A LONGITUDE DA LOCALIZAÇÃO
+        //2 - ADICIONEM O MÉTODO DO "googleMap.addMarker" PARA MARCAR NO MAPA
+            //.position = nome da variável
+            //.title = você que decide HUEHUEHUEHUEUE
+    override fun onMapReady(googleMap: GoogleMap) {
+        val Unip = LatLng(-23.2336196, -45.9598745)
+        val Casa = LatLng(28.3948982,-81.6029011)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(Unip)
+                .title("TCC")
+        )
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(Casa)
+                .title("FREEZA! POR QUE VOCÊ MATOU O KURIRIN?")
+        )
     }
 }
