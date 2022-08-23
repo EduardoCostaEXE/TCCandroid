@@ -14,7 +14,28 @@
         android:theme="@style/Theme.DAPPassageiros"
         tools:targetApi="31">
         <activity
+            android:name=".AcompanharTrajeto"
+            android:exported="false" />
+        <activity
+            android:name=".ListaDeMotoristas"
+            android:exported="false" />
+        <activity
+            android:name=".TelaInicialAluno"
+            android:exported="false" />
+        <activity
+            android:name=".TelaPassageiro"
+            android:exported="false" />
+        <activity
+            android:name=".TelaPassageiroFinal"
+            android:exported="false" />
+        <activity
+            android:name=".TelaCadastro"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
