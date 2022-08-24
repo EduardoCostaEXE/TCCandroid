@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaInicialAluno">
+
+    <Toolbar
+        android:id="@+id/toolbar_menu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/DarkGray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/imageVubermoto"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/img_logo" />
+
+        <ImageButton
+            android:id="@+id/btn_sair"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/img_sair"
+            app:iconPadding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="15dp"
+            android:layout_gravity="end"/>
+
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/lbl_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/menu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btn_navegacao"
+        style="@style/edit_button_menu"
+        android:text="@string/acompanhar_trajeto"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_perfil"
+        app:layout_constraintTop_toBottomOf="@id/lbl_menu"
+        android:drawableTop="@drawable/img_navegacao"/>
+
+    <Button
+        android:id="@+id/btn_perfil"
+        style="@style/edit_button_menu"
+        android:text="@string/meu_cadastro"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        app:layout_constraintEnd_toStartOf="@id/btn_navegacao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_menu"
+        android:drawableTop="@drawable/img_conta_usuario"
+        />
+
+    <Button
+        android:id="@+id/btn_listaMotoristas"
+        style="@style/edit_button_menu"
+        android:text="@string/lista_de_motoristas"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_perfil"
+        app:layout_constraintEnd_toStartOf="@id/btn_solicitacoes"
+        android:drawableTop="@drawable/img_motoristas"/>
+
+    <Button
+        android:id="@+id/btn_solicitacoes"
+        style="@style/edit_button_menu"
+        android:text=""
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_listaMotoristas"
+        app:layout_constraintTop_toBottomOf="@id/btn_navegacao"
+        android:visibility="invisible"
+        android:clickable="false"/>
+
+    <TextView
+        android:id="@+id/txt_copyrightmoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/copyright_2022_by_vuber"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+</androidx.constraintlayout.widget.ConstraintLayout>
