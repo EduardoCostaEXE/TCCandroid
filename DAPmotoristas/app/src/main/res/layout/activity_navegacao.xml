@@ -8,32 +8,15 @@
     android:background="@color/white"
     tools:context=".Navegacao">
 
-    <ImageButton
-        android:id="@+id/btn_voltar"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/img_seta_voltar"
-        android:backgroundTint="@color/black"
-        app:iconPadding="10dp"
-        app:iconTint="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:rippleColor="#000000"
-        app:strokeColor="#000000" />
-
     <TextView
         android:id="@+id/label_navegacao"
         style="@style/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="28dp"
         android:text="@string/navegacao"
-        app:layout_constraintStart_toStartOf="@id/btn_voltar"
-        app:layout_constraintTop_toBottomOf="@id/btn_voltar" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="47dp" />
 
     <TextView
         android:id="@+id/txt_destinomoto"
@@ -108,5 +91,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <fragment
+        android:id="@+id/mapa"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_iniciarnavegacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tempomoto"
+        app:layout_constraintVertical_bias="1.0"
+        tools:context="com.example.dapmotoristas.Navegacao" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
