@@ -1,5 +1,3 @@
 # Dev do TCC
 
-Faça branchs aqui
-
-## TCC
+Faça branchs aqui.
