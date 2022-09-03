@@ -1,6 +1,7 @@
 package com.example.dapmotoristas
 
 import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -15,7 +16,9 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
 class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+    private lateinit var map: GoogleMap
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var lastLocation: Location
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,24 +43,24 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
     override fun onMapReady(googleMap: GoogleMap) {
 
         //Faz aparecer os botões de zoom e permite ao usuário interagir melhor
-        googleMap.getUiSettings().setZoomControlsEnabled(true)
-        googleMap.setOnMarkerClickListener(this)
+        map.getUiSettings().setZoomControlsEnabled(true)
+        map.setOnMarkerClickListener(this)
 
         val Unip = LatLng(-23.25520814200808, -45.94855886683163)
         val Casa = LatLng(28.3948982,-81.6029011)
-        googleMap.addMarker(
+        map.addMarker(
             MarkerOptions()
                 .position(Unip)
                 .title("UNIP")
         )
-        googleMap.addMarker(
+        map.addMarker(
             MarkerOptions()
                 .position(Casa)
                 .title("FREEZA! POR QUE VOCÊ MATOU O KURIRIN?")
         )
 
         //Abrir o mapa centralizado no marcador e com zoom nele
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Unip, 14.0f))
+//        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Unip, 14.0f))
 
         setUpMap()
     }
@@ -67,6 +70,16 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMITION_REQUEST_CODE)
             return
+        }
+
+        map.isMyLocationEnabled = true
+
+        fusedLocationClient.lastLocation.addOnSuccessListener(this) {  location ->
+            if (location != null){
+                lastLocation = location
+                val currentLatLng = LatLng(location.latitude, location.longitude)
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 14.0f))
+            }
         }
     }
 
