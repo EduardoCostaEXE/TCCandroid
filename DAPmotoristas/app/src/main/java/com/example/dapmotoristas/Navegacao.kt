@@ -32,6 +32,8 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
             //.position = nome da variável
             //.title = você que decide HUEHUEHUEHUEUE
     override fun onMapReady(googleMap: GoogleMap) {
+
+        //Faz aparecer os botões de zoom e permite ao usuário interagir melhor
         googleMap.getUiSettings().setZoomControlsEnabled(true)
         googleMap.setOnMarkerClickListener(this)
 
@@ -48,7 +50,10 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
                 .title("FREEZA! POR QUE VOCÊ MATOU O KURIRIN?")
         )
 
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Casa))
+        //Abrir o mapa centralizado no marcador e com zoom nele
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Casa, 12.0f))
+
+    }
     }
 
     override fun onMarkerClick(p0: Marker) = false
