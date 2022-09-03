@@ -1,7 +1,9 @@
 package com.example.dapmotoristas
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -25,6 +27,10 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
     }
 
+    //Requisita permissão do usuário para acessar a localização dele
+    companion object {
+        private const val LOCATION_PERMITION_REQUEST_CODE = 1
+    }
 
     //COLOQUEM AS LOCALIZAÇÕES AQUI
         //1 - CRIEM A VARIÁVEL COM A LATITUDE E A LONGITUDE DA LOCALIZAÇÃO
@@ -53,7 +59,15 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
         //Abrir o mapa centralizado no marcador e com zoom nele
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Casa, 12.0f))
 
+        setUpMap()
     }
+
+    //Verifica se o usuário permitiu o compartilhamento de localização, caso não tenha, é solicitado novamente
+    private fun setUpMap() {
+        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMITION_REQUEST_CODE)
+            return
+        }
     }
 
     override fun onMarkerClick(p0: Marker) = false
