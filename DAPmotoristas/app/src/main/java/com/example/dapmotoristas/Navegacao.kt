@@ -43,12 +43,12 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
         googleMap.getUiSettings().setZoomControlsEnabled(true)
         googleMap.setOnMarkerClickListener(this)
 
-        val Unip = LatLng(-23.2336196, -45.9598745)
+        val Unip = LatLng(-23.25520814200808, -45.94855886683163)
         val Casa = LatLng(28.3948982,-81.6029011)
         googleMap.addMarker(
             MarkerOptions()
                 .position(Unip)
-                .title("TCC")
+                .title("UNIP")
         )
         googleMap.addMarker(
             MarkerOptions()
@@ -57,7 +57,7 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
         )
 
         //Abrir o mapa centralizado no marcador e com zoom nele
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Casa, 12.0f))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Unip, 14.0f))
 
         setUpMap()
     }
