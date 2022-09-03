@@ -1,14 +1,19 @@
 package com.example.dapmotoristas
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
-class Navegacao : AppCompatActivity(), OnMapReadyCallback {
+class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +21,8 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback {
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.mapa) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
     }
 
 
@@ -25,6 +32,9 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback {
             //.position = nome da variável
             //.title = você que decide HUEHUEHUEHUEUE
     override fun onMapReady(googleMap: GoogleMap) {
+        googleMap.getUiSettings().setZoomControlsEnabled(true)
+        googleMap.setOnMarkerClickListener(this)
+
         val Unip = LatLng(-23.2336196, -45.9598745)
         val Casa = LatLng(28.3948982,-81.6029011)
         googleMap.addMarker(
@@ -37,5 +47,9 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback {
                 .position(Casa)
                 .title("FREEZA! POR QUE VOCÊ MATOU O KURIRIN?")
         )
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Casa))
     }
+
+    override fun onMarkerClick(p0: Marker) = false
 }
