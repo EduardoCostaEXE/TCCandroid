@@ -40,7 +40,7 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
         //2 - ADICIONEM O MÉTODO DO "googleMap.addMarker" PARA MARCAR NO MAPA
             //.position = nome da variável
             //.title = você que decide HUEHUEHUEHUEUE
-    override fun onMapReady(googleMap: GoogleMap) {
+    override fun onMapReady(map: GoogleMap) {
 
         //Faz aparecer os botões de zoom e permite ao usuário interagir melhor
         map.getUiSettings().setZoomControlsEnabled(true)
