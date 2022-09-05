@@ -1,0 +1,46 @@
+EndPassageiros = [c1, c2, c3, c4, c5]
+Ordem = [ , , , , ]
+EndFinal = Endereço da escola
+
+menorDistancia: Int
+casa: casa
+
+// Começa decidindo como última casa como sendo a casa que consegue chegar com mais facilidade na escola
+Para cada EndPassageiros{
+    facilidadeDeChegada = distanciaPontoAPonto( EndPassageiros[i], EndFinal )
+
+    se facilidadeDeChegada < menorDistancia
+        menorDistancia = facilidadeDeChegada
+        casa = EndPassageiros[i]
+}
+Ordem[ultimo] = casa
+EndPassageiros = remove casa
+
+Enquanto EndPassageiros não estiver vazio{
+
+    // Verificar quais são as casas mais distantes da última, para que o motorista vá a caminho dela
+    CasasDistantes = []
+    Para cada EndPassageiros{
+        distanciaLat = latitude EndPassageiros[i] - latitude Ordem[ultimo]
+        distanciaLong = longitude EndPassageiros[i] - longitude Ordem[ultimo]
+
+        se for um dos mais distantes
+            CasasDistantes = adiciona
+    }
+
+    // Decide por qual casa mais distante começar
+    ProximaCasa: endereço
+    Para cada CasasDistantes{
+        facilidadeDeChegada = distanciaPontoAPonto( PosiçãoDoUsuário, CasasDistantes[i] )
+
+        /* Realizar alguma lógica de qual vale mais a pena, se acordo com o que o Ponto a Ponto retornar */
+        // Ex: Essa casa não é das mais longes, mas é muito fácil de chegar nela (A*), então vou nela
+
+        se CasasDistantes[i] vale mais a pena{
+            ProximaCasa = CasasDistantes[i]
+        }
+    }
+    Ordem = adiciona ProximaCasa
+    EndPassageiros = remove ProximaCasa
+
+}
