@@ -20,6 +20,11 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var lastLocation: Location
 
+    //Requisita permissão do usuário para acessar a localização dele
+    companion object {
+        private const val LOCATION_PERMITION_REQUEST_CODE = 1
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegacao)
@@ -28,11 +33,6 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
         mapFragment?.getMapAsync(this)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-    }
-
-    //Requisita permissão do usuário para acessar a localização dele
-    companion object {
-        private const val LOCATION_PERMITION_REQUEST_CODE = 1
     }
 
     //COLOQUEM AS LOCALIZAÇÕES AQUI
@@ -44,7 +44,6 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
 
         //Faz aparecer os botões de zoom e permite ao usuário interagir melhor
         map.getUiSettings().setZoomControlsEnabled(true)
-        map.setOnMarkerClickListener(this)
 
         val Unip = LatLng(-23.25520814200808, -45.94855886683163)
         val Casa = LatLng(28.3948982,-81.6029011)
@@ -60,7 +59,7 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
         )
 
         //Abrir o mapa centralizado no marcador e com zoom nele
-//        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Unip, 14.0f))
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(Unip, 15.0f))
 
         setUpMap()
     }
@@ -78,7 +77,8 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
             if (location != null){
                 lastLocation = location
                 val currentLatLng = LatLng(location.latitude, location.longitude)
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 14.0f))
+//                Colocar o foco no usuário
+//                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 14.0f))
             }
         }
     }
