@@ -77,10 +77,16 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCli
             if (location != null){
                 lastLocation = location
                 val currentLatLng = LatLng(location.latitude, location.longitude)
+                placeMarkerOnMap(currentLatLng)
 //                Colocar o foco no usuário
 //                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 14.0f))
             }
         }
+    }
+
+    private fun placeMarkerOnMap(location: LatLng) {
+        val markerOptions = MarkerOptions().position(location)
+        map.addMarker(markerOptions)
     }
 
     override fun onMarkerClick(p0: Marker) = false
