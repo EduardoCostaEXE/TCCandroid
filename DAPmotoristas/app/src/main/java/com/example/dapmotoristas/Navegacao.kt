@@ -45,7 +45,6 @@ class Navegacao : AppCompatActivity() {
 
     }
 
-
     //Verifica se o usuário permitiu o compartilhamento de localização, caso não tenha, é solicitado novamente
     private fun permission() {
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

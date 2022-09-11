@@ -81,22 +81,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent" />
-
-<!--    <fragment-->
-<!--        android:id="@+id/mapa"-->
-<!--        android:name="com.google.android.gms.maps.SupportMapFragment"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_marginStart="10dp"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:layout_marginEnd="10dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/bt_iniciarnavegacao"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/txt_tempomoto"-->
-<!--        app:layout_constraintVertical_bias="1.0"-->
-<!--        tools:context="com.example.dapmotoristas.Navegacao" />-->
     
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map"
