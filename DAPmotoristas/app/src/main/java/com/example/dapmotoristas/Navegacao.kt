@@ -26,7 +26,6 @@ class Navegacao : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegacao)
-        setUpMap()
 
         //Add map fragment
         val mapOptions = MapOptions(mapKey = APIKEY)
@@ -66,13 +65,4 @@ class Navegacao : AppCompatActivity() {
 
     private fun setUpMapListeners() {
     }
-
-    // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
-    private fun setUpMap() {
-        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMITION_REQUEST_CODE)
-            return
-        }
-    }
-    // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
 }
