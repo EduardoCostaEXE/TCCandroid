@@ -1,19 +1,21 @@
 package com.example.dapmotoristas
 
+import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.tomtom.sdk.common.location.GeoLocation
 //Tomtom
 import com.tomtom.sdk.maps.display.MapOptions
 import com.tomtom.sdk.maps.display.ui.MapFragment
 import com.tomtom.sdk.maps.display.TomTomMap
+import com.tomtom.sdk.location.android.AndroidLocationEngine
 import com.tomtom.sdk.maps.display.location.LocationMarkerOptions
 import com.tomtom.sdk.maps.display.location.LocationMarkerType
 
 class Navegacao : AppCompatActivity() {
 
+    private lateinit var locationEngine: AndroidLocationEngine
     private lateinit var tomTomMap: TomTomMap
     private val APIKEY = "2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq"
 
@@ -24,26 +26,11 @@ class Navegacao : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegacao)
-
         setUpMap()
 
         //Add map fragment
         val mapOptions = MapOptions(mapKey = APIKEY)
         val mapFragment = MapFragment.newInstance(mapOptions)
-
-        //Localização em tempo real
-
-        val mapLocationEngine = tomTomMap.getLocationEngine()
-        val isLocationInVisibleArea = tomTomMap.isCurrentLocationInMapBoundingBox
-        val currentLocation: GeoLocation? = tomTomMap.currentLocation
-
-        val locationMarkerOptions = LocationMarkerOptions(
-            type = LocationMarkerType.CHEVRON
-        )
-
-        tomTomMap.enableLocationMarker(locationMarkerOptions)
-        tomTomMap.disableLocationMarker()
-        //Localização em tempo real
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.map, mapFragment)
@@ -56,6 +43,30 @@ class Navegacao : AppCompatActivity() {
         }
     }
 
+    // LOCALIZAÇÃO EM TEMPO REAL
+    private fun enableUserLocation() {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            return
+        }
+
+        locationEngine = AndroidLocationEngine(context = this)
+        locationEngine.enable()
+
+        tomTomMap.setLocationEngine(locationEngine)
+        val locationMarker = LocationMarkerOptions(type=LocationMarkerType.CHEVRON)
+        tomTomMap.enableLocationMarker(locationMarker)
+    }
+
+    private fun setUpMapListeners() {
+    }
+
     // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
     private fun setUpMap() {
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -63,10 +74,5 @@ class Navegacao : AppCompatActivity() {
             return
         }
     }
-    
-    private fun enableUserLocation() {
-    }
-
-    private fun setUpMapListeners() {
-    }
+    // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
 }
