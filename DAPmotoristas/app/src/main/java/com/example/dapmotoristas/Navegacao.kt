@@ -51,11 +51,6 @@ class Navegacao : AppCompatActivity() {
             setUpMapListeners()
         }
     }
-
-    private fun enableUserLocation() {
-        locationEngine = AndroidLocationEngine(context = this)
-        locationEngine.enable()
-    }
     
     private fun enableUserLocation() {
         locationEngine = AndroidLocationEngine(context = this)
@@ -66,10 +61,9 @@ class Navegacao : AppCompatActivity() {
                 this,
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED) {
-
-
             return
         }
+
 
         locationEngine.enable()
 
@@ -78,9 +72,7 @@ class Navegacao : AppCompatActivity() {
         tomTomMap.enableLocationMarker(locationMarker)
     }
 
-    private fun createRoute(destination: GeoCoordinate) {
-        val userLocation = tomTomMap.currentLocation?.position ?: return
-        val itinerary = Itinerary(origin = userLocation, destination = destination)
+    private fun setUpMapListeners() {
 
     }
 
