@@ -1,6 +1,5 @@
 package com.example.dapmotoristas
 
-import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +25,7 @@ class Navegacao : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegacao)
+        setUpMap()
 
         //Add map fragment
         val mapOptions = MapOptions(mapKey = APIKEY)
@@ -44,16 +44,6 @@ class Navegacao : AppCompatActivity() {
 
     // LOCALIZAÇÃO EM TEMPO REAL
     private fun enableUserLocation() {
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            return
-        }
 
         locationEngine = AndroidLocationEngine(context = this)
         locationEngine.enable()
@@ -65,4 +55,13 @@ class Navegacao : AppCompatActivity() {
 
     private fun setUpMapListeners() {
     }
+
+    // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
+    private fun setUpMap() {
+        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMITION_REQUEST_CODE)
+            return
+        }
+    }
+    // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
 }
