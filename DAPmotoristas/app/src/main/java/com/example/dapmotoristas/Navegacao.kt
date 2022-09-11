@@ -1,10 +1,9 @@
 package com.example.dapmotoristas
 
-
-import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 //Tomtom
 import com.tomtom.sdk.maps.display.MapOptions
 import com.tomtom.sdk.maps.display.ui.MapFragment
@@ -15,21 +14,19 @@ class Navegacao : AppCompatActivity() {
     private lateinit var tomTomMap: TomTomMap
     private val APIKEY = "2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq"
 
-    //LOCALIZAÇÃO EM TEMPO REAL
-    val locationPermissionRequest = registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions()
-    ) { permissions ->
-        when {
-            permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
-                // Precise location access granted.
-            }
-            permissions.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
-                // Only approximate location access granted.
-            } else -> {
-            // No location access granted.
-        }
+    companion object {
+        private const val LOCATION_PERMITION_REQUEST_CODE = 1
+    }
+
+
+    private fun setUpMap() {
+        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMITION_REQUEST_CODE)
+            return
         }
     }
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
