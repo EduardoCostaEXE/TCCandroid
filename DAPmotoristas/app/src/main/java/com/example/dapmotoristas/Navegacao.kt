@@ -4,10 +4,13 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.tomtom.sdk.common.location.GeoLocation
 //Tomtom
 import com.tomtom.sdk.maps.display.MapOptions
 import com.tomtom.sdk.maps.display.ui.MapFragment
 import com.tomtom.sdk.maps.display.TomTomMap
+import com.tomtom.sdk.maps.display.location.LocationMarkerOptions
+import com.tomtom.sdk.maps.display.location.LocationMarkerType
 
 class Navegacao : AppCompatActivity() {
 
@@ -27,6 +30,21 @@ class Navegacao : AppCompatActivity() {
         //Add map fragment
         val mapOptions = MapOptions(mapKey = APIKEY)
         val mapFragment = MapFragment.newInstance(mapOptions)
+
+        //Localização em tempo real
+
+        val mapLocationEngine = tomTomMap.getLocationEngine()
+        val isLocationInVisibleArea = tomTomMap.isCurrentLocationInMapBoundingBox
+        val currentLocation: GeoLocation? = tomTomMap.currentLocation
+
+        val locationMarkerOptions = LocationMarkerOptions(
+            type = LocationMarkerType.CHEVRON
+        )
+
+        tomTomMap.enableLocationMarker(locationMarkerOptions)
+        tomTomMap.disableLocationMarker()
+        //Localização em tempo real
+
         supportFragmentManager.beginTransaction()
             .replace(R.id.map, mapFragment)
             .commit()
