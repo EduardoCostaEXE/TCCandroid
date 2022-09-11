@@ -42,10 +42,12 @@ android {
 
 dependencies {
 
-    implementation "com.tomtom.sdk:maps-display:0.3.509"
-    implementation "com.tomtom.sdk:location-android:0.3.509"
-    implementation "com.tomtom.sdk:location-proxy:0.3.509"
-    implementation "com.tomtom.sdk:location-api:0.3.509"
+    def version = "0.3.509"
+    implementation "com.tomtom.sdk:maps-display:$version"
+    implementation "com.tomtom.sdk:location-android:$version"
+    implementation "com.tomtom.sdk:location-proxy:$version"
+    implementation "com.tomtom.sdk:location-api:$version"
+    implementation "com.tomtom.sdk:routing-client-online:$version"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
