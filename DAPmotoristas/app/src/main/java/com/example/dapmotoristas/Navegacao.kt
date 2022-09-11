@@ -27,7 +27,7 @@ class Navegacao : AppCompatActivity() {
         val mapOptions = MapOptions(mapKey = APIKEY)
         val mapFragment = MapFragment.newInstance(mapOptions)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.map_container, mapFragment)
+            .replace(R.id.map, mapFragment)
             .commit()
 
         mapFragment.getMapAsync { map ->

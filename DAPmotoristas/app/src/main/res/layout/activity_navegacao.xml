@@ -99,7 +99,7 @@
 <!--        tools:context="com.example.dapmotoristas.Navegacao" />-->
     
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/map_container"
+        android:id="@+id/map"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
