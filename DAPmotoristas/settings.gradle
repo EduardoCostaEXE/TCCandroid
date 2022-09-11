@@ -10,6 +10,13 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            credentials{
+                username = 'diretoao.vuber@gmail.com'
+                password = 'TccFrames48!'
+            }
+            url = uri("https://repositories.tomtom.com/artifactory/maven")
+        }
     }
 }
 rootProject.name = "D.A.P. Motoristas"

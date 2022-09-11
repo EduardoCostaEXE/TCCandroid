@@ -14,16 +14,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
         android:text="@string/navegacao"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="47dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_destinomoto"
         style="@style/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:text="@string/destino"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/label_navegacao"
@@ -44,7 +45,7 @@
         style="@style/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:text="@string/tempoEstimado"
         android:textIsSelectable="true"
         android:textStyle="bold"
@@ -61,21 +62,9 @@
         app:layout_constraintStart_toEndOf="@+id/txt_tempomoto"
         app:layout_constraintTop_toTopOf="@+id/txt_tempomoto" />
 
-    <ImageView
-        android:id="@+id/img_fotoUsuario"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginBottom="475dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_navegacao"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bt_iniciarnavegacao"
-        android:background="@drawable/img_foto_perfil"/>
-
     <Button
         android:id="@+id/bt_iniciarnavegacao"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -85,6 +74,7 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:cornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -92,20 +82,34 @@
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <fragment
-        android:id="@+id/mapa"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+<!--    <fragment-->
+<!--        android:id="@+id/mapa"-->
+<!--        android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/bt_iniciarnavegacao"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/txt_tempomoto"-->
+<!--        app:layout_constraintVertical_bias="1.0"-->
+<!--        tools:context="com.example.dapmotoristas.Navegacao" />-->
+    
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/bt_iniciarnavegacao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_tempomoto"
-        app:layout_constraintVertical_bias="1.0"
-        tools:context="com.example.dapmotoristas.Navegacao" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
