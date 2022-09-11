@@ -11,6 +11,7 @@ import com.tomtom.sdk.maps.display.TomTomMap
 
 class Navegacao : AppCompatActivity() {
 
+    private lateinit var locationEngine: AndroidLocationEngine
     private lateinit var tomTomMap: TomTomMap
     private val APIKEY = "2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq"
 
@@ -37,11 +38,12 @@ class Navegacao : AppCompatActivity() {
         }
     }
 
-    private fun setUpMapListeners() {
-
+    private fun enableUserLocation() {
+        locationEngine = AndroidLocationEngine(context = this)
+        locationEngine.enable()
     }
 
-    private fun enableUserLocation() {
+    private fun setUpMapListeners() {
 
     }
 
