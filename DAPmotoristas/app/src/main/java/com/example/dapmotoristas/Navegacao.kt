@@ -18,20 +18,11 @@ class Navegacao : AppCompatActivity() {
         private const val LOCATION_PERMITION_REQUEST_CODE = 1
     }
 
-
-    private fun setUpMap() {
-        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMITION_REQUEST_CODE)
-            return
-        }
-    }
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegacao)
+
+        setUpMap()
 
         //Add map fragment
         val mapOptions = MapOptions(mapKey = APIKEY)
@@ -46,11 +37,18 @@ class Navegacao : AppCompatActivity() {
             setUpMapListeners()
         }
     }
+
+    // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
+    private fun setUpMap() {
+        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMITION_REQUEST_CODE)
+            return
+        }
+    }
     
     private fun enableUserLocation() {
     }
 
     private fun setUpMapListeners() {
     }
-
 }
