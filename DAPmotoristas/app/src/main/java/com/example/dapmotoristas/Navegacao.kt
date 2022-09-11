@@ -1,7 +1,9 @@
 package com.example.dapmotoristas
 
 
+import android.Manifest
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 //Tomtom
 import com.tomtom.sdk.maps.display.MapOptions
@@ -12,6 +14,22 @@ class Navegacao : AppCompatActivity() {
 
     private lateinit var tomTomMap: TomTomMap
     private val APIKEY = "2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq"
+
+    //LOCALIZAÇÃO EM TEMPO REAL
+    val locationPermissionRequest = registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { permissions ->
+        when {
+            permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
+                // Precise location access granted.
+            }
+            permissions.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
+                // Only approximate location access granted.
+            } else -> {
+            // No location access granted.
+        }
+        }
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
