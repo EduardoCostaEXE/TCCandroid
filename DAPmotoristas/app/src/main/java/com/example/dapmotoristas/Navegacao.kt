@@ -52,10 +52,11 @@ class Navegacao : AppCompatActivity() {
         }
     }
 
-    private fun setUpMapListeners() {
-
+    private fun enableUserLocation() {
+        locationEngine = AndroidLocationEngine(context = this)
+        locationEngine.enable()
     }
-
+    
     private fun enableUserLocation() {
         locationEngine = AndroidLocationEngine(context = this)
         if (ActivityCompat.checkSelfPermission(
@@ -65,6 +66,8 @@ class Navegacao : AppCompatActivity() {
                 this,
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED) {
+
+
             return
         }
 
