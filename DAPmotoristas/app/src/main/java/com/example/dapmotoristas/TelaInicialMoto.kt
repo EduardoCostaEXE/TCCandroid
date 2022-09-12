@@ -19,6 +19,9 @@ class TelaInicialMoto : AppCompatActivity() {
         binding.btnNavegacao.setOnClickListener {
             IrParaNavegacao()
         }
+        binding.btnListaAlunos.setOnClickListener {
+            IrParaListaAlunos()
+        }
         binding.btnSolicitacoes.setOnClickListener {
             IrParaSolicitacoes()
         }
@@ -37,9 +40,13 @@ class TelaInicialMoto : AppCompatActivity() {
         val telaNavegacao = Intent(this, Navegacao::class.java)
         startActivity(telaNavegacao)
     }
-    private fun IrParaSolicitacoes(){
-        val telaListaAlunos = Intent(this, ListaDeAlunos::class.java)
+    private fun IrParaListaAlunos(){
+        val telaListaAlunos = Intent(this, ListagemAlunos::class.java)
         startActivity(telaListaAlunos)
+    }
+    private fun IrParaSolicitacoes(){
+        val telaSolicitacoes = Intent(this, ListaSolicitacoes::class.java)
+        startActivity(telaSolicitacoes)
     }
     private fun IrParaTelaPerfil(){
         val telaPerfil = Intent(this, Perfil::class.java)
