@@ -2,6 +2,7 @@ package com.example.dapmotoristas
 
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 //Tomtom
@@ -11,12 +12,22 @@ import com.tomtom.sdk.maps.display.TomTomMap
 import com.tomtom.sdk.location.android.AndroidLocationEngine
 import com.tomtom.sdk.maps.display.location.LocationMarkerOptions
 import com.tomtom.sdk.maps.display.location.LocationMarkerType
+import com.tomtom.sdk.routing.api.description.SectionType
+import com.tomtom.sdk.routing.api.guidance.AnnouncementPoints
+import com.tomtom.sdk.routing.api.guidance.InstructionPhoneticsType
+import com.tomtom.sdk.routing.api.guidance.InstructionType
 import com.tomtom.sdk.routing.online.OnlineRoutingApi
+import com.tomtom.sdk.common.location.GeoCoordinate
+import com.tomtom.sdk.common.route.Route
+import com.tomtom.sdk.common.route.section.travelmode.TravelMode
+import com.tomtom.sdk.routing.api.*
 
 class Navegacao : AppCompatActivity() {
 
+    private lateinit var route: Route
     private lateinit var locationEngine: AndroidLocationEngine
     private lateinit var tomTomMap: TomTomMap
+    private lateinit var planRouteOptions: PlanRouteOptions
     private val APIKEY = "2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq"
     private val routingAPI = OnlineRoutingApi.create(context = this, apiKey = APIKEY)
 
@@ -62,10 +73,32 @@ class Navegacao : AppCompatActivity() {
     // LOCALIZAÇÃO EM TEMPO REAL
 
     //CRIAR ROTA
-    private fun createRoute() {
+    private val planRouteCallback = object : PlanRouteCallback {
+        override fun onSucess(result: PlanRouteResult) {
+            route = result.routes.first()
+            drawRoute(route !!)
+        }
+
+        override fun onError(error: RoutingError) {
+            Toast.makeText(this@Navegacao, error.message, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun drawRoute(route: Route){
+    }
+
+    private fun createRoute(destination: GeoCoordinate) {
         val userLocation = tomTomMap.currentLocation?.position ?: return
-
-
+        val itinerary = Itinerary(origin = userLocation, destination = destination)
+        planRouteOptions = PlanRouteOptions(
+            itinerary = itinerary,
+            instructionType = InstructionType.TEXT,
+            instructionPhonetics = InstructionPhoneticsType.IPA,
+            instructionAnnouncementPoints = AnnouncementPoints.ALL,
+            sectionTypes = listOf(SectionType.MOTORWAY, SectionType.LANES, SectionType.SPEED_LIMIT),
+            travelMode = TravelMode.VAN
+        )
+        routingAPI.planRoute(planRouteOptions, planRouteCallback)
     }
 
     private fun setUpMapListeners() {
