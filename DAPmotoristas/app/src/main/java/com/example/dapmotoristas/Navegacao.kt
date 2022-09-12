@@ -11,12 +11,16 @@ import com.tomtom.sdk.maps.display.TomTomMap
 import com.tomtom.sdk.location.android.AndroidLocationEngine
 import com.tomtom.sdk.maps.display.location.LocationMarkerOptions
 import com.tomtom.sdk.maps.display.location.LocationMarkerType
+import com.tomtom.sdk.routing.online.OnlineRoutingApi
 
 class Navegacao : AppCompatActivity() {
 
     private lateinit var locationEngine: AndroidLocationEngine
     private lateinit var tomTomMap: TomTomMap
     private val APIKEY = "2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq"
+    private val routingAPI = OnlineRoutingApi.create(context = this, apiKey = APIKEY)
+
+
 
     companion object {
         private const val LOCATION_PERMITION_REQUEST_CODE = 1
@@ -44,7 +48,10 @@ class Navegacao : AppCompatActivity() {
 
     // LOCALIZAÇÃO EM TEMPO REAL
     private fun enableUserLocation() {
-
+        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMITION_REQUEST_CODE)
+            return
+        }
         locationEngine = AndroidLocationEngine(context = this)
         locationEngine.enable()
 
@@ -52,16 +59,21 @@ class Navegacao : AppCompatActivity() {
         val locationMarker = LocationMarkerOptions(type=LocationMarkerType.CHEVRON)
         tomTomMap.enableLocationMarker(locationMarker)
     }
+    // LOCALIZAÇÃO EM TEMPO REAL
+
+    //CRIAR ROTA
+    private fun createRoute() {
+        val userLocation = tomTomMap.currentLocation?.position ?: return
+
+
+    }
 
     private fun setUpMapListeners() {
     }
 
     // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
     private fun setUpMap() {
-        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMITION_REQUEST_CODE)
-            return
-        }
+
     }
     // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
 }
