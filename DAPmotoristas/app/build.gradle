@@ -48,7 +48,7 @@ dependencies {
     implementation "com.tomtom.sdk:location-proxy:$version"
     implementation "com.tomtom.sdk:location-api:$version"
     implementation "com.tomtom.sdk:routing-client-online:$version"
-    implementation "com.tomtom.sdk:location.simulation:$version"
+//    implementation "com.tomtom.sdk:location.simulation:$version"
 //    implementation "com.tomtom.sdk:location.mapmatched:$version"
 //    implementation "com.tomtom.sdk:navigation:$version"
 //    implementation "com.tomtom.sdk:navigation-ui:$version"
