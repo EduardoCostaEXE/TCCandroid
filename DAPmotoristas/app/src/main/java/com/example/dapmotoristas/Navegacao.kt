@@ -51,7 +51,7 @@ class Navegacao : AppCompatActivity() {
         val mapFragment = MapFragment.newInstance(mapOptions)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.map, mapFragment)
+            .replace(R.id.map_container, mapFragment)
             .commit()
 
         mapFragment.getMapAsync { map ->
@@ -80,11 +80,15 @@ class Navegacao : AppCompatActivity() {
     private val planRouteCallback = object : RoutePlanningCallback {
         override fun onSuccess(result: RoutePlanningResult) {
             route = result.routes.first()
-            drawRoute(route !!)
+            drawRoute(route)
         }
 
         override fun onError(error: RoutingError) {
             Toast.makeText(this@Navegacao, error.message, Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onRoutePlanned(route: Route) {
+
         }
     }
 
@@ -93,16 +97,16 @@ class Navegacao : AppCompatActivity() {
 
     private fun createRoute(destination: GeoCoordinate) {
         val userLocation = tomTomMap.currentLocation?.position ?: return
-        val itinerary = Itinerary(origin = userLocation, destination = destination)
-        planRouteOptions = RoutePlanningOptions(
-            itinerary = itinerary,
-            instructionType = InstructionType.TEXT,
-            instructionPhonetics = InstructionPhoneticsType.IPA,
-            instructionAnnouncementPoints = AnnouncementPoints.ALL,
-            sectionTypes = listOf(SectionType.MOTORWAY, SectionType.LANES, SectionType.SPEED_LIMIT),
-            travelMode = TravelMode.VAN
-        )
-        routingAPI.planRoute(planRouteOptions, planRouteCallback)
+//        val itinerary = Itinerary(origin = userLocation, destination = destination)
+//        planRouteOptions = RoutePlanningOptions(
+//            itinerary = itinerary,
+//            instructionType = InstructionType.TEXT,
+//            instructionPhonetics = InstructionPhoneticsType.IPA,
+//            instructionAnnouncementPoints = AnnouncementPoints.ALL,
+//            sectionTypes = listOf(SectionType.MOTORWAY, SectionType.LANES, SectionType.SPEED_LIMIT),
+//            travelMode = TravelMode.VAN
+//        )
+//        routingAPI.planRoute(planRouteOptions, planRouteCallback)
     }
 
     private fun setUpMapListeners() {
