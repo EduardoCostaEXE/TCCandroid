@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SpashScreen"
         tools:targetApi="31">
+        <meta-data
+            android:name="OnlineRouting.Key"
+            android:value="2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq" />
         <activity
             android:name=".TelaEditar"
             android:exported="false" />
