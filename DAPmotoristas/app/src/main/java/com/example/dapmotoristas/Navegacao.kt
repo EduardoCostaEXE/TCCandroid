@@ -9,33 +9,14 @@ import androidx.core.app.ActivityCompat
 import com.tomtom.sdk.maps.display.MapOptions
 import com.tomtom.sdk.maps.display.ui.MapFragment
 import com.tomtom.sdk.maps.display.TomTomMap
-import com.tomtom.sdk.location.android.AndroidLocationEngine
 import com.tomtom.sdk.maps.display.location.LocationMarkerOptions
 import com.tomtom.sdk.maps.display.location.LocationMarkerType
-import com.tomtom.sdk.routing.common.options.description.SectionType
-import com.tomtom.sdk.routing.common.options.guidance.InstructionType
-import com.tomtom.sdk.routing.common.options.guidance.AnnouncementPoints
-import com.tomtom.sdk.routing.common.options.guidance.InstructionPhoneticsType
-import com.tomtom.sdk.routing.online.OnlineRoutingApi
-import com.tomtom.sdk.common.location.GeoCoordinate
-import com.tomtom.sdk.common.route.Route
-import com.tomtom.sdk.common.route.section.travelmode.TravelMode
-import com.tomtom.sdk.routing.api.*
-import com.tomtom.sdk.routing.common.options.RoutePlanningOptions
-import com.tomtom.sdk.routing.api.RoutePlanningCallback
-import com.tomtom.sdk.routing.api.RoutePlanningResult
-import com.tomtom.sdk.routing.common.RoutingError
-import com.tomtom.sdk.routing.common.options.Itinerary
+import com.tomtom.sdk.location.android.AndroidLocationEngine
 
 class Navegacao : AppCompatActivity() {
-    private lateinit var route: Route
     private lateinit var locationEngine: AndroidLocationEngine
     private lateinit var tomTomMap: TomTomMap
-    private lateinit var planRouteOptions: RoutePlanningOptions
     private val APIKEY = "2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq"
-    private val routingAPI = OnlineRoutingApi.create(context = this, apiKey = APIKEY)
-
-
 
     companion object {
         private const val LOCATION_PERMITION_REQUEST_CODE = 1
@@ -44,7 +25,6 @@ class Navegacao : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegacao)
-        setUpMap()
 
         //Add map fragment
         val mapOptions = MapOptions(mapKey = APIKEY)
@@ -71,50 +51,12 @@ class Navegacao : AppCompatActivity() {
         locationEngine.enable()
 
         tomTomMap.setLocationEngine(locationEngine)
-        val locationMarker = LocationMarkerOptions(type=LocationMarkerType.CHEVRON)
+        val locationMarker = LocationMarkerOptions(type = LocationMarkerType.CHEVRON)
         tomTomMap.enableLocationMarker(locationMarker)
     }
-    // LOCALIZAÇÃO EM TEMPO REAL
-
-    //CRIAR ROTA
-    private val planRouteCallback = object : RoutePlanningCallback {
-        override fun onSuccess(result: RoutePlanningResult) {
-            route = result.routes.first()
-            drawRoute(route)
-        }
-
-        override fun onError(error: RoutingError) {
-            Toast.makeText(this@Navegacao, error.message, Toast.LENGTH_SHORT).show()
-        }
-
-        override fun onRoutePlanned(route: Route) {
-
-        }
-    }
-
-    private fun drawRoute(route: Route){
-    }
-
-    private fun createRoute(destination: GeoCoordinate) {
-        val userLocation = tomTomMap.currentLocation?.position ?: return
-//        val itinerary = Itinerary(origin = userLocation, destination = destination)
-//        planRouteOptions = RoutePlanningOptions(
-//            itinerary = itinerary,
-//            instructionType = InstructionType.TEXT,
-//            instructionPhonetics = InstructionPhoneticsType.IPA,
-//            instructionAnnouncementPoints = AnnouncementPoints.ALL,
-//            sectionTypes = listOf(SectionType.MOTORWAY, SectionType.LANES, SectionType.SPEED_LIMIT),
-//            travelMode = TravelMode.VAN
-//        )
-//        routingAPI.planRoute(planRouteOptions, planRouteCallback)
-    }
+    // FIM LOCALIZAÇÃO EM TEMPO REAL
 
     private fun setUpMapListeners() {
-    }
-
-    // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
-    private fun setUpMap() {
 
     }
-    // PEDIR PRA COMPARTILHAR LOCALIZAÇÃO
 }
