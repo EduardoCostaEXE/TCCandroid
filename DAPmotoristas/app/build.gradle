@@ -34,15 +34,29 @@ android {
     viewBinding{
         enabled = true
     }
+
+    packagingOptions{
+        pickFirst "lib/**/libc++_shared.so"
+    }
 }
 
 dependencies {
+
+    def version = "0.3.509"
+    implementation "com.tomtom.sdk:maps-display:$version"
+    implementation "com.tomtom.sdk:location-android:$version"
+    implementation "com.tomtom.sdk:location-proxy:$version"
+    implementation "com.tomtom.sdk:location-api:$version"
+    implementation "com.tomtom.sdk:routing-client-online:$version"
+//    implementation "com.tomtom.sdk:location.simulation:$version"
+//    implementation "com.tomtom.sdk:location.mapmatched:$version"
+//    implementation "com.tomtom.sdk:navigation:$version"
+//    implementation "com.tomtom.sdk:navigation-ui:$version"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.android.gms:play-services-maps:18.0.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
