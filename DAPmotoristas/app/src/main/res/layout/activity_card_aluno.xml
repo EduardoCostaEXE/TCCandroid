@@ -14,7 +14,7 @@
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="100dp"
+            android:layout_marginEnd="50dp"
             android:background="#E5E5E5"
             android:visibility="visible"
             app:layout_constraintTop_toTopOf="@id/constraintLayout"
@@ -53,7 +53,7 @@
                         android:text="@string/nome" />
 
                     <TextView
-                        android:id="@+id/nome_card"
+                        android:id="@+id/nome_lista_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp" />
@@ -71,7 +71,7 @@
                         android:text="@string/endereco" />
 
                     <TextView
-                        android:id="@+id/endereco_card"
+                        android:id="@+id/endereco_lista_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp" />
@@ -89,7 +89,7 @@
                         android:text="@string/nome_da_universidade" />
 
                     <TextView
-                        android:id="@+id/instituicao_card"
+                        android:id="@+id/instituicao_lista_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp" />
@@ -98,30 +98,16 @@
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginStart="5dp"
-            app:layout_constraintStart_toEndOf="@id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="@id/constraintLayout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <Button
+            <ImageButton
                 android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#1D8E36"
-                android:text="@string/aceitar"
-                android:textSize="12sp" />
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
                 android:backgroundTint="#CD1616"
-                android:text="@string/remover"
-                android:textSize="12sp" />
-        </LinearLayout>
+                android:background="@drawable/img_deletar"
+                app:layout_constraintStart_toEndOf="@id/constraintLayout2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

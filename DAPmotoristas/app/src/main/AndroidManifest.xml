@@ -19,17 +19,20 @@
             android:name="OnlineRouting.Key"
             android:value="2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq" />
         <activity
+            android:name=".ListagemAlunos"
+            android:exported="false" />
+        <activity
             android:name=".TelaEditar"
             android:exported="false" />
         <activity
             android:name=".Navegacao"
-            android:label="title_activity_navegacao"
-            android:exported="false" />
+            android:exported="false"
+            android:label="title_activity_navegacao" />
         <activity
             android:name=".CardLista"
             android:exported="false" />
         <activity
-            android:name=".ListaDeAlunos"
+            android:name=".ListaSolicitacoes"
             android:exported="false" />
         <activity
             android:name=".Perfil"
@@ -52,7 +55,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
-
 </manifest>
