@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.tomtom.sdk.common.location.GeoCoordinate
+import com.tomtom.sdk.common.route.Route
 //Tomtom
 import com.tomtom.sdk.maps.display.MapOptions
 import com.tomtom.sdk.maps.display.ui.MapFragment
@@ -12,11 +14,22 @@ import com.tomtom.sdk.maps.display.TomTomMap
 import com.tomtom.sdk.maps.display.location.LocationMarkerOptions
 import com.tomtom.sdk.maps.display.location.LocationMarkerType
 import com.tomtom.sdk.location.android.AndroidLocationEngine
+import com.tomtom.sdk.maps.display.route.Instruction
+import com.tomtom.sdk.maps.display.route.RouteOptions
+import com.tomtom.sdk.routing.api.*
+import com.tomtom.sdk.routing.common.RoutingError
+import com.tomtom.sdk.routing.online.OnlineRoutingApi
+import com.tomtom.sdk.routing.common.options.Itinerary
+import com.tomtom.sdk.routing.common.options.RoutePlanningOptions
+import com.tomtom.sdk.routing.common.options.vehicle.Vehicle
 
 class Navegacao : AppCompatActivity() {
+    private lateinit var route: Route
+    private lateinit var planRouteOptions: RoutePlanningOptions
     private lateinit var locationEngine: AndroidLocationEngine
     private lateinit var tomTomMap: TomTomMap
     private val APIKEY = "2XhCWUOz93KHvOjIGSoZ6D8liAgYjcrq"
+    private lateinit var routingAPI: RoutingApi
 
     companion object {
         private const val LOCATION_PERMITION_REQUEST_CODE = 1
@@ -34,6 +47,7 @@ class Navegacao : AppCompatActivity() {
             .replace(R.id.map_container, mapFragment)
             .commit()
 
+        routingAPI = OnlineRoutingApi.create(context = this, apiKey = APIKEY)
         mapFragment.getMapAsync { map ->
             tomTomMap = map
             enableUserLocation()
@@ -56,7 +70,68 @@ class Navegacao : AppCompatActivity() {
     }
     // FIM LOCALIZAÇÃO EM TEMPO REAL
 
-    private fun setUpMapListeners() {
+    private val planRouteCallback = object : RoutePlanningCallback {
+        override fun onSuccess(result: RoutePlanningResult) {
+            route = result.routes.first()
+            drawRoute(route)
+        }
 
+        override fun onError(error: RoutingError) {
+            Toast.makeText(this@Navegacao, error.message, Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onRoutePlanned(route: Route) {
+
+        }
+    }
+
+    private fun Route.mapInstructions(): List<Instruction> {
+        val routeInstructions = legs.flatMap { routeLeg -> routeLeg.instructions }
+        return routeInstructions.map {
+            Instruction(
+                routeOffset = it.routeOffset,
+                combineWithNext = it.isPossibleToCombineWithNext
+            )
+        }
+    }
+
+    private fun drawRoute(route: Route){
+        val instructions = route.mapInstructions()
+        val geometry = route.legs.flatMap { it.points }
+        val routeOptions = RouteOptions(
+            geometry = geometry,
+            destinationMarkerVisible = true,
+            departureMarkerVisible = true,
+            instructions = instructions
+        )
+        tomTomMap.addRoute(routeOptions)
+        val ZOOM_PADDING = 20
+        tomTomMap.zoomToRoutes(ZOOM_PADDING)
+    }
+
+    private fun createRoute(destination: GeoCoordinate) {
+        val userLocation = tomTomMap.currentLocation?.position ?: return
+        val itinerary = Itinerary(origin = userLocation, destination = destination)
+
+        planRouteOptions = RoutePlanningOptions(
+            itinerary = itinerary,
+            costModel = null,
+            departAt = null,
+            arriveAt = null,
+            alternativeRoutesOptions = null,
+            guidanceOptions = null,
+            routeLegOptions = emptyList(),
+            vehicle = Vehicle.Van(),
+            chargingOptions = null,
+            queryOptions = null
+        )
+        routingAPI.planRoute(planRouteOptions, planRouteCallback)
+    }
+
+    private fun setUpMapListeners() {
+        tomTomMap.addOnMapClickListener { coordinate: GeoCoordinate ->
+            createRoute(coordinate)
+            return@addOnMapClickListener true
+        }
     }
 }
