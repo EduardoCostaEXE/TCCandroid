@@ -14,14 +14,5 @@ class ListaDeAlunos : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.hide()
-
-        binding.button.setOnClickListener {
-            IrParaTelaMenu()
-        }
-    }
-
-    private fun IrParaTelaMenu(){
-        val telaMenu = Intent(this, TelaInicialMoto::class.java)
-        startActivity(telaMenu)
     }
 }

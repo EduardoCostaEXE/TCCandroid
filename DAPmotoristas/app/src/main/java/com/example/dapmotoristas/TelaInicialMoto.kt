@@ -38,7 +38,7 @@ class TelaInicialMoto : AppCompatActivity() {
         startActivity(telaNavegacao)
     }
     private fun IrParaSolicitacoes(){
-        val telaListaAlunos = Intent(this, ListaDeAlunos::class.java)
+        val telaListaAlunos = Intent(this, MainActivity::class.java)
         startActivity(telaListaAlunos)
     }
     private fun IrParaTelaPerfil(){

@@ -23,9 +23,6 @@
             android:label="title_activity_navegacao"
             android:exported="false" />
         <activity
-            android:name=".CardLista"
-            android:exported="false" />
-        <activity
             android:name=".ListaDeAlunos"
             android:exported="false" />
         <activity
