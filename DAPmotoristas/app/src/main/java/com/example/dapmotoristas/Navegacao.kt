@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.tomtom.sdk.common.location.GeoCoordinate
+import com.tomtom.sdk.common.location.Place
 import com.tomtom.sdk.common.route.Route
 //Tomtom
 import com.tomtom.sdk.maps.display.MapOptions
@@ -14,12 +15,15 @@ import com.tomtom.sdk.maps.display.TomTomMap
 import com.tomtom.sdk.maps.display.location.LocationMarkerOptions
 import com.tomtom.sdk.maps.display.location.LocationMarkerType
 import com.tomtom.sdk.location.android.AndroidLocationEngine
+import com.tomtom.sdk.maps.display.image.ImageFactory
+import com.tomtom.sdk.maps.display.marker.MarkerOptions
 import com.tomtom.sdk.maps.display.route.Instruction
 import com.tomtom.sdk.maps.display.route.RouteOptions
 import com.tomtom.sdk.routing.api.*
 import com.tomtom.sdk.routing.common.RoutingError
 import com.tomtom.sdk.routing.online.OnlineRoutingApi
 import com.tomtom.sdk.routing.common.options.Itinerary
+import com.tomtom.sdk.routing.common.options.ItineraryPoint
 import com.tomtom.sdk.routing.common.options.RoutePlanningOptions
 import com.tomtom.sdk.routing.common.options.vehicle.Vehicle
 
@@ -54,6 +58,16 @@ class Navegacao : AppCompatActivity() {
             setUpMapListeners()
         }
     }
+
+    //override fun onMapReady(map: TomTomMap) {
+    //    this.tomTomMap = map
+    //    val pointNagumo = GeoCoordinate(-23.2819211, -45.8949833)
+    //    val markerOptions = MarkerOptions(
+    //        coordinate = amsterdam,
+    //        pinImage = ImageFactory.fromResource(R.drawable.img_escolaridade)
+    //    )
+    //    this.tomTomMap.addMarker(markerOptions)
+    //}
 
     // LOCALIZAÇÃO EM TEMPO REAL
     private fun enableUserLocation() {
@@ -110,8 +124,20 @@ class Navegacao : AppCompatActivity() {
     }
 
     private fun createRoute(destination: GeoCoordinate) {
+
+        //LOCALIZAÇÕES
+        val nagumo = ItineraryPoint(Place(GeoCoordinate(-23.2819211,-45.8949833)))
+        val valesul = ItineraryPoint(Place(GeoCoordinate(-23.2166612,-45.8943798)))
+        val coop = ItineraryPoint(Place(GeoCoordinate(-23.2418716,-45.9071935)))
+        val oriente = ItineraryPoint(Place(GeoCoordinate(-23.238213,-45.9004863)))
+        val sesi = ItineraryPoint(Place(GeoCoordinate(-23.2518806,-45.9021679)))
+        val unip = ItineraryPoint(Place(GeoCoordinate(-23.2551934,-45.9507422)))
+        //LOCALIZAÇÕES
+
         val userLocation = tomTomMap.currentLocation?.position ?: return
-        val itinerary = Itinerary(origin = userLocation, destination = destination)
+        val itinerary = Itinerary(origin = nagumo,
+            destination = unip,
+            waypoints = listOf(valesul,coop,oriente,sesi,unip))
 
         planRouteOptions = RoutePlanningOptions(
             itinerary = itinerary,
@@ -133,5 +159,6 @@ class Navegacao : AppCompatActivity() {
             createRoute(coordinate)
             return@addOnMapClickListener true
         }
+
     }
 }
