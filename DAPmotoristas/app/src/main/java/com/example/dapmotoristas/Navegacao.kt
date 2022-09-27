@@ -126,18 +126,19 @@ class Navegacao : AppCompatActivity() {
     private fun createRoute(destination: GeoCoordinate) {
 
         //LOCALIZAÇÕES
-        val nagumo = ItineraryPoint(Place(GeoCoordinate(-23.2819211,-45.8949833)))
-        val valesul = ItineraryPoint(Place(GeoCoordinate(-23.2166612,-45.8943798)))
-        val coop = ItineraryPoint(Place(GeoCoordinate(-23.2418716,-45.9071935)))
-        val oriente = ItineraryPoint(Place(GeoCoordinate(-23.238213,-45.9004863)))
-        val sesi = ItineraryPoint(Place(GeoCoordinate(-23.2518806,-45.9021679)))
-        val unip = ItineraryPoint(Place(GeoCoordinate(-23.2551934,-45.9507422)))
+        val pizza1 = ItineraryPoint(Place(GeoCoordinate(-23.193015815750694, -45.89688166682618)))
+        val burgerking = ItineraryPoint(Place(GeoCoordinate(-23.19176089996789, -45.89088961164485)))
+        val pqSantos = ItineraryPoint(Place(GeoCoordinate(-23.199032693570107, -45.891408764316125)))
+        val mcDonalds = ItineraryPoint(Place(GeoCoordinate(-23.19410800212455, -45.893464532579614)))
+        val vicentina = ItineraryPoint(Place(GeoCoordinate(-23.197362319153708, -45.89640423381242)))
+        val unip = ItineraryPoint(Place(GeoCoordinate(-23.255208142011195, -45.948542773570026)))
         //LOCALIZAÇÕES
 
         val userLocation = tomTomMap.currentLocation?.position ?: return
-        val itinerary = Itinerary(origin = nagumo,
+        val itinerary = Itinerary(origin = pizza1,
             destination = unip,
-            waypoints = listOf(valesul,coop,oriente,sesi,unip))
+            waypoints = listOf(burgerking,pqSantos,mcDonalds,vicentina)
+        )
 
         planRouteOptions = RoutePlanningOptions(
             itinerary = itinerary,
