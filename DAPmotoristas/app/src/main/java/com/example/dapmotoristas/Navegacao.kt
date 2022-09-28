@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.tomtom.sdk.common.location.GeoCoordinate
+import com.tomtom.sdk.common.location.Place
 import com.tomtom.sdk.common.route.Route
 //Tomtom
 import com.tomtom.sdk.maps.display.MapOptions
@@ -14,12 +15,15 @@ import com.tomtom.sdk.maps.display.TomTomMap
 import com.tomtom.sdk.maps.display.location.LocationMarkerOptions
 import com.tomtom.sdk.maps.display.location.LocationMarkerType
 import com.tomtom.sdk.location.android.AndroidLocationEngine
+import com.tomtom.sdk.maps.display.image.ImageFactory
+import com.tomtom.sdk.maps.display.marker.MarkerOptions
 import com.tomtom.sdk.maps.display.route.Instruction
 import com.tomtom.sdk.maps.display.route.RouteOptions
 import com.tomtom.sdk.routing.api.*
 import com.tomtom.sdk.routing.common.RoutingError
 import com.tomtom.sdk.routing.online.OnlineRoutingApi
 import com.tomtom.sdk.routing.common.options.Itinerary
+import com.tomtom.sdk.routing.common.options.ItineraryPoint
 import com.tomtom.sdk.routing.common.options.RoutePlanningOptions
 import com.tomtom.sdk.routing.common.options.vehicle.Vehicle
 
@@ -54,6 +58,16 @@ class Navegacao : AppCompatActivity() {
             setUpMapListeners()
         }
     }
+
+    //override fun onMapReady(map: TomTomMap) {
+    //    this.tomTomMap = map
+    //    val pointNagumo = GeoCoordinate(-23.2819211, -45.8949833)
+    //    val markerOptions = MarkerOptions(
+    //        coordinate = amsterdam,
+    //        pinImage = ImageFactory.fromResource(R.drawable.img_escolaridade)
+    //    )
+    //    this.tomTomMap.addMarker(markerOptions)
+    //}
 
     // LOCALIZAÇÃO EM TEMPO REAL
     private fun enableUserLocation() {
@@ -110,8 +124,21 @@ class Navegacao : AppCompatActivity() {
     }
 
     private fun createRoute(destination: GeoCoordinate) {
+
+        //LOCALIZAÇÕES
+        val pizza1 = ItineraryPoint(Place(GeoCoordinate(-23.193015815750694, -45.89688166682618)))
+        val burgerking = ItineraryPoint(Place(GeoCoordinate(-23.19176089996789, -45.89088961164485)))
+        val pqSantos = ItineraryPoint(Place(GeoCoordinate(-23.199032693570107, -45.891408764316125)))
+        val mcDonalds = ItineraryPoint(Place(GeoCoordinate(-23.19410800212455, -45.893464532579614)))
+        val vicentina = ItineraryPoint(Place(GeoCoordinate(-23.197362319153708, -45.89640423381242)))
+        val unip = ItineraryPoint(Place(GeoCoordinate(-23.255208142011195, -45.948542773570026)))
+        //LOCALIZAÇÕES
+
         val userLocation = tomTomMap.currentLocation?.position ?: return
-        val itinerary = Itinerary(origin = userLocation, destination = destination)
+        val itinerary = Itinerary(origin = pizza1,
+            destination = unip,
+            waypoints = listOf(burgerking,pqSantos,mcDonalds,vicentina)
+        )
 
         planRouteOptions = RoutePlanningOptions(
             itinerary = itinerary,
@@ -133,5 +160,6 @@ class Navegacao : AppCompatActivity() {
             createRoute(coordinate)
             return@addOnMapClickListener true
         }
+
     }
 }
