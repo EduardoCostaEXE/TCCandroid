@@ -60,12 +60,12 @@ class Navegacao : AppCompatActivity() {
     }
 
     //override fun onMapReady(map: TomTomMap) {
-    //    this.tomTomMap = map
-    //    val pointNagumo = GeoCoordinate(-23.2819211, -45.8949833)
+    //this.tomTomMap = map
+    //    val amsterdam = GeoCoordinate(52.379189, 4.899431)
     //    val markerOptions = MarkerOptions(
     //        coordinate = amsterdam,
     //        pinImage = ImageFactory.fromResource(R.drawable.img_escolaridade)
-    //    )
+    //     )
     //    this.tomTomMap.addMarker(markerOptions)
     //}
 
@@ -83,6 +83,7 @@ class Navegacao : AppCompatActivity() {
         tomTomMap.enableLocationMarker(locationMarker)
     }
     // FIM LOCALIZAÇÃO EM TEMPO REAL
+
 
     private val planRouteCallback = object : RoutePlanningCallback {
         override fun onSuccess(result: RoutePlanningResult) {
@@ -134,7 +135,6 @@ class Navegacao : AppCompatActivity() {
         val unip = ItineraryPoint(Place(GeoCoordinate(-23.255208142011195, -45.948542773570026)))
         //LOCALIZAÇÕES
 
-        val userLocation = tomTomMap.currentLocation?.position ?: return
         val itinerary = Itinerary(origin = pizza1,
             destination = unip,
             waypoints = listOf(burgerking,pqSantos,mcDonalds,vicentina)
