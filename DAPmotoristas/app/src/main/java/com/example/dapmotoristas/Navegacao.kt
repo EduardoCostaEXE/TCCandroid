@@ -60,11 +60,11 @@ class Navegacao : AppCompatActivity() {
     }
 
     //override fun onMapReady(map: TomTomMap) {
-    //this.tomTomMap = map
-    //    val amsterdam = GeoCoordinate(52.379189, 4.899431)
+    //    this.tomTomMap = map
+    //    val pointburgerking = GeoCoordinate(-23.19176089996789, -45.89088961164485)
     //    val markerOptions = MarkerOptions(
-    //        coordinate = amsterdam,
-    //        pinImage = ImageFactory.fromResource(R.drawable.img_escolaridade)
+    //        coordinate = pointburgerking,
+    //       pinImage = ImageFactory.fromResource(R.drawable.img_escolaridade)
     //     )
     //    this.tomTomMap.addMarker(markerOptions)
     //}
