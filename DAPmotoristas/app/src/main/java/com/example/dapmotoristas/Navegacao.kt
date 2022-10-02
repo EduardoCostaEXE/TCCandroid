@@ -19,6 +19,7 @@ import com.tomtom.sdk.maps.display.image.ImageFactory
 import com.tomtom.sdk.maps.display.marker.MarkerOptions
 import com.tomtom.sdk.maps.display.route.Instruction
 import com.tomtom.sdk.maps.display.route.RouteOptions
+import com.tomtom.sdk.maps.display.ui.OnMapReadyCallback
 import com.tomtom.sdk.routing.api.*
 import com.tomtom.sdk.routing.common.RoutingError
 import com.tomtom.sdk.routing.online.OnlineRoutingApi
@@ -27,7 +28,7 @@ import com.tomtom.sdk.routing.common.options.ItineraryPoint
 import com.tomtom.sdk.routing.common.options.RoutePlanningOptions
 import com.tomtom.sdk.routing.common.options.vehicle.Vehicle
 
-class Navegacao : AppCompatActivity() {
+class Navegacao : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var route: Route
     private lateinit var planRouteOptions: RoutePlanningOptions
     private lateinit var locationEngine: AndroidLocationEngine
@@ -59,15 +60,15 @@ class Navegacao : AppCompatActivity() {
         }
     }
 
-    //override fun onMapReady(map: TomTomMap) {
-    //    this.tomTomMap = map
-    //    val pointburgerking = GeoCoordinate(-23.19176089996789, -45.89088961164485)
-    //    val markerOptions = MarkerOptions(
-    //        coordinate = pointburgerking,
-    //       pinImage = ImageFactory.fromResource(R.drawable.img_escolaridade)
-    //     )
-    //    this.tomTomMap.addMarker(markerOptions)
-    //}
+    override fun onMapReady(map: TomTomMap) {
+        this.tomTomMap = map
+        val pointburgerking = GeoCoordinate(-23.19176089996789, -45.89088961164485)
+        val markerOptions = MarkerOptions(
+            coordinate = pointburgerking,
+            pinImage = ImageFactory.fromResource(R.drawable.img_escolaridade),
+        )
+        this.tomTomMap.addMarker(markerOptions)
+    }
 
     // LOCALIZAÇÃO EM TEMPO REAL
     private fun enableUserLocation() {
