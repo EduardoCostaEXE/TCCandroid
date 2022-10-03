@@ -65,7 +65,7 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback {
         val pointburgerking = GeoCoordinate(-23.19176089996789, -45.89088961164485)
         val markerOptions = MarkerOptions(
             coordinate = pointburgerking,
-            pinImage = ImageFactory.fromResource(R.drawable.img_escolaridade),
+            pinImage = ImageFactory.fromResource(R.drawable.ic_marker),
         )
         this.tomTomMap.addMarker(markerOptions)
     }
