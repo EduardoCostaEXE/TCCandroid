@@ -16,6 +16,7 @@ import com.tomtom.sdk.maps.display.location.LocationMarkerOptions
 import com.tomtom.sdk.maps.display.location.LocationMarkerType
 import com.tomtom.sdk.location.android.AndroidLocationEngine
 import com.tomtom.sdk.maps.display.image.ImageFactory
+import com.tomtom.sdk.maps.display.marker.Label
 import com.tomtom.sdk.maps.display.marker.MarkerOptions
 import com.tomtom.sdk.maps.display.route.Instruction
 import com.tomtom.sdk.maps.display.route.RouteOptions
@@ -62,12 +63,13 @@ class Navegacao : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(map: TomTomMap) {
         this.tomTomMap = map
-        val pointburgerking = GeoCoordinate(-23.19176089996789, -45.89088961164485)
+        val pointBK = GeoCoordinate(-23.193015815750694, -45.89688166682618)
         val markerOptions = MarkerOptions(
-            coordinate = pointburgerking,
-            pinImage = ImageFactory.fromResource(R.drawable.ic_marker),
+            coordinate = pointBK,
+            pinImage = ImageFactory.fromResource(R.drawable.img_escolaridade),
+            label = Label("Aparece pra mim, pfv ;-;")
         )
-        this.tomTomMap.addMarker(markerOptions)
+        tomTomMap.addMarker(markerOptions)
     }
 
     // LOCALIZAÇÃO EM TEMPO REAL
